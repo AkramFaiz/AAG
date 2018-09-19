@@ -18,6 +18,14 @@ aside .jumbotron,aside .jumbotron p{
     font-family: fontL;
     font-size: 30px;
 }
+aside .jumbotron p,aside .jumbotron label{
+    background: rgba(134, 94, 25, 0.3);
+    padding: 5px 10px;
+    color: #ffffff;
+}
+aside .jumbotron label{
+    font-size: 18px;
+}
 article > div{
     display: inline-block;
     vertical-align: middle;

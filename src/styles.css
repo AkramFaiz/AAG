@@ -1,0 +1,147 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+html,body{
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin:0;
+    font-family: font2;
+    overflow: hidden;
+}
+*{
+    outline: none;
+}
+ul{
+    padding: 0;
+    margin:0;
+}
+ul li{
+    list-style: none;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 2px;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #a89797; 
+    border-radius: 2px;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #ab843a; 
+}
+input::-webkit-input-placeholder { 
+    /*color: #E0E0E0;*/
+    font-size: 12px;
+}
+div,p,span{
+    font-family: font2;
+    /* color: #ab843a; */
+}
+header,.ui-widget-content{
+    background-color: #23212f;
+}
+@font-face {
+    font-family: font1;
+    src: url(assets/font/rale/Raleway-ExtraBoldItalic.ttf);
+}
+@font-face {
+    font-family: font2;
+    src: url(assets/font/rale/Raleway-Medium.ttf);
+}
+@font-face {
+    font-family: fontL;
+    src: url(assets/font/rale/Raleway-Light.ttf);
+}
+section{
+    padding: 55px 15px 10px 15px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin: auto;
+}
+section > div.internalDiv{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 55px 5px 0 5px;
+    top: 0;
+    left: 0;
+    overflow: auto;
+    background: rgba(35, 33, 47, 0.76);
+}
+app-login .ui-card{
+    width: 350px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 360px;
+    margin: auto;
+    padding: 25px 10px;
+}
+app-login .ui-card-subtitle,app-login .ui-card-title{
+    text-align: center;
+    color: #ab843a;
+}
+app-login .ui-card-title{
+    font-family: font1;
+    font-weight: 100;
+    font-size: 34px;
+}
+.ui-state-default,.ui-inputgroup .ui-inputgroup-addon{
+    background: #ab843a;
+}
+.ui-button.ui-widget.ui-state-default.ui-corner-all.ui-button-text-only{
+    font-size: 14px;
+    padding: 2px 0 5px 0;
+    border-radius: 0;
+    border: none;
+}
+.ui-button-text.ui-clickable{
+    color: #cccccc;
+}
+.ui-inputgroup .ui-inputgroup-addon:first-child{
+    border-radius: 0;
+}
+.ui-sidebar-top{
+    background: none;
+    box-shadow: none;
+    border: none;
+    height: 100%;
+}
+app-login .ui-toast .ui-toast-message-content{
+    background: #540f15;
+}
+app-painting .ui-toast .ui-toast-message-content{
+    background: #ffe399;
+}
+
+app-popup{
+    position: fixed;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    width: 80%;
+    height: 80%;
+    margin: auto;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+@media only screen and (max-width: 768px) {
+    section{
+        padding: 80px 25px 0 15px;
+    }
+}
+

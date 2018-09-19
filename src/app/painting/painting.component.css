@@ -1,0 +1,67 @@
+section{
+    background: url(../../assets/paint_bg.jpg) no-repeat center;
+    background-size: cover;
+}
+.rangeDiv{
+    font-family: fontL;
+    color: #ab843a;
+    font-size: 14px;
+    padding: 10px 15px;
+    height: 50px;
+}
+.rangeDiv ul{
+    float: right; 
+}
+.rangeDiv ul li{
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0 10px;
+}
+.rangeDiv ul li span{
+    position: absolute;
+    top: -25px;
+}
+.rangeDiv label{
+    font-family: font1;
+}
+div.ui-g{
+    justify-content: center;
+}
+.cardDiv{
+    float: left;
+    height: 220px;
+    text-align: center;
+}
+.animated:hover {    
+    display: block;
+   -webkit-animation-duration: 2s;
+   animation-duration: 2s;
+   -webkit-animation-fill-mode: both;
+   animation-fill-mode: both;
+ -webkit-animation-iteration-count: infinite;    
+ animation-iteration-count: infinite;  
+}
+
+/*
+ * Pulse animation
+*/
+@-webkit-keyframes pulse {
+    0% { -webkit-transform: scale(1); }
+    50% { -webkit-transform: scale(1.1); }
+    100% { -webkit-transform: scale(1); }
+}
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+.pulse {
+    -webkit-animation-name: pulse;
+    animation-name: pulse;
+}
+@media only screen and (max-width: 768px) {
+    section>div{
+        padding: 80px 5px 0 5px;
+    }
+}
+

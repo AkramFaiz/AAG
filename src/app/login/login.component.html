@@ -1,0 +1,22 @@
+<p-card title="Akram's Art Gallery" subtitle="Login" styleClass="ui-card-shadow">
+        <p-header>
+            <img height="60px" src="Card" src="assets/logo.svg">
+        </p-header>
+        <div class="ui-g-12 ui-lg-12">
+        <div class="ui-inputgroup">
+            <span class="ui-inputgroup-addon"><i class="pi pi-user"></i></span>
+            <input type="text" pInputText name="uname" placeholder="Username" [(ngModel)]="username">         
+        </div>
+        </div>
+        <div class="ui-g-12 ui-lg-12">
+        <div class="ui-inputgroup">
+            <span class="ui-inputgroup-addon"><i class="pi pi-lock"></i></span>
+            <input type="password" pInputText name="pswd" placeholder="Password" [(ngModel)]="password">       
+        </div>  
+        </div>
+        <p-footer class="ui-g-12 ui-lg-12">
+            <button pButton type="button" label="Login" (click)="loginClk()"></button>
+            <button pButton type="button" label="Cancel" style="float: right;" (click)="cancelClk()" class="ui-button-secondary"></button>
+        </p-footer>
+</p-card>
+<p-toast position="bottom-center" key='login'></p-toast>

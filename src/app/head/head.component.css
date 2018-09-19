@@ -1,0 +1,131 @@
+header{
+    z-index: 111;
+    position: fixed;
+    height: 45px;
+    width: 100%;
+}
+.pi.pi-bars,header>img{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 10px;
+    margin: auto;
+}
+header img.moreDiv{
+    height: 25px;
+    right: 0;
+    width: 30px;
+    left: auto;
+    padding: 3px;
+    border-left: 1px solid #ab843a;
+}
+.loginDiv img,.loginDiv span{
+    display: inline-block;
+    vertical-align: middle;
+}
+header label{
+    font-size: 28px;
+    color: #ab843a;
+    font-family: font1;
+    padding: 2px 55px;
+    height: 45px;
+    margin: 0px 0;
+    display: block;
+    width: 505px;
+    float: left;
+}
+.loginDiv{
+    padding: 9px 35px;
+    float: right;
+    color: #ab843a;
+}
+.loginDiv span{
+    padding: 0 5px;
+}
+#tagcloud a:nth-child(3), #tagcloud a:nth-child(1), #tagcloud a:nth-child(6){
+    font-size: 30px;
+}
+#tagcloud a{
+    display: inline-block;
+    margin: 1%;
+    background: #45444b;
+    border-radius: 22px;
+    padding: 3%;
+    color: #ab843a;
+}
+#tagcloud a sup{
+    font-size: 12px;
+}
+.sideHeader label,.sideHeader span{
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0;
+}
+.sideHeader label{
+    width: 80%;
+}
+.sideHeader span{
+    color: #ab843a; 
+    font-family: font1;
+    padding: 3px 15px;
+    font-size: 18px;
+}
+.sideHeader li{
+    background: #3a3838;
+    height: 50px;
+    position: relative;
+    box-shadow: 1px 1px 10px #000000;
+}
+.sideHeader li:nth-child(even){
+    background: #45444b;
+}
+.sideHeader li:last-child{
+    border-bottom: none;
+}
+.cartIcon,.logoutIcon,.iIcon,.addItemIcon{
+    background: url(../../assets/cart.svg) no-repeat center;   
+    background-size: 25px 25px;
+    height: 30px;
+    position: absolute;
+    bottom: 8px;
+}
+.iIcon{
+    background: url(../../assets/i.svg) no-repeat center;   
+    background-size: 12px 25px;
+}
+.addItemIcon{
+    background: url(../../assets/addItem.svg) no-repeat center;   
+    background-size: 22px 22px;
+}
+.logoutIcon{
+    background: url(../../assets/logout.svg) no-repeat center;   
+    background-size: 25px 25px;
+}
+pre{
+    position: absolute;
+    top: -1px;
+    right: 30px;
+    color: #c2c2c2;
+    font-family: font1;
+    font-size: 16px;
+}
+
+@media only screen and (max-width: 768px) {
+    header{
+        height: 70px;
+    }
+    header label{
+        padding: 5px 5px 5px 55px;
+        width: 200px;
+        font-size: 20px;
+    }
+    .loginDiv{
+        padding: 22px 35px 22px 10px;
+    }
+    .loginDiv span{
+        max-width: 80px;
+        white-space: nowrap; 
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}

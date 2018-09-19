@@ -53,3 +53,9 @@ ul li label{
     width: 18px;
     height: 18px;
 }
+
+@media only screen and (min-width: 600px) {
+    ul li span{
+        width: 35px;
+    }
+}

@@ -35,9 +35,10 @@ import { PricePipe } from './pipes/price/price.pipe';
 import localeFr from '@angular/common/locales/fr';
 // import 'rxjs';
 import { registerLocaleData } from '@angular/common';
-import { NgZorroAntdModule, NZ_I18N, en_US } from 'ng-zorro-antd';
+import { NgZorroAntdModule, NZ_I18N, en_US, zh_CN } from 'ng-zorro-antd';
 import en from '@angular/common/locales/en';
-registerLocaleData(en);
+import zh from '@angular/common/locales/zh';
+registerLocaleData(zh);
 
 @NgModule({
   declarations: [
@@ -71,7 +72,7 @@ registerLocaleData(en);
     AppRoutingModule,
     NgZorroAntdModule
   ],
-  providers: [MessageService, { provide: NZ_I18N, useValue: en_US }],
+  providers: [MessageService, { provide: NZ_I18N, useValue: zh_CN }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

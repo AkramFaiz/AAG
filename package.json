@@ -30,7 +30,8 @@
     "primeng": "^6.1.3",
     "rxjs": "^6.2.0",
     "rxjs-compat": "^6.2.0",
-    "zone.js": "~0.8.26"
+    "zone.js": "~0.8.26",
+    "less": "^2.7.3"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.7.0",

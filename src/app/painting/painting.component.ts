@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ImageType } from './../interface/image.interface';
 
+
 @Component({
   selector: 'app-painting',
   templateUrl: './painting.component.html',
@@ -80,9 +81,6 @@ export class PaintingComponent implements OnInit {
         liked: false
       }
     ];
-  }
-  rangerSlide(e) {
-    console.log(e);
   }
   curImage(e) {
     console.log('image: ' + e);

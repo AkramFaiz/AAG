@@ -5,18 +5,17 @@
                 <li><label>Price Range: </label></li>
                 <li [ngStyle]="{'width':'230px','position':'relative'}">                       
                       <nz-slider
+                        #ranger
                         nzRange
                         [nzStep]="10"
                         [nzDefaultValue]="[20, 50]"
                         [(ngModel)]="rangeValue"
                         (nzOnAfterChange)="onAfterChange($event)"
-                      ></nz-slider>
-                    <!-- <span [ngStyle]="{'left':'5px'}">{{rangeVal[0]}}</span> <span [ngStyle]="{'right':'5px'}">{{rangeVal[1]}}</span>
-                    <p-slider [(ngModel)]="rangeVal" name="rangeVal" [range]="true"></p-slider> -->
+                      ></nz-slider>                   
                 </li>
             </ul>           
         </div>
-        <div class="col-xs-12 col-sm-6 col-md-5 col-lg-3 ml-0 mr-0 mb-4 mt-0 cardDiv animated pulse" *ngFor="let image of images">
+        <div class="col-xs-12 col-sm-6 col-md-5 col-lg-3 ml-0 mr-0 mb-4 mt-0 cardDiv animated pulse" *ngFor="let image of images | price: ranger?.value">
             <app-card [imageList]="image"></app-card>
         </div>
     <p-toast position="top-right" key="cart"></p-toast>

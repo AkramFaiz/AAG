@@ -23,61 +23,73 @@ export class PaintingComponent implements OnInit {
       {
         path: '/assets/paint/paint1.jpg',
         cost: 300000,
+        width: '100%',
         liked: true
       },
       {
         path: '../../assets/paint/paint2.jpg',
         cost: 25000,
+        width: '100%',
         liked: false
       },
       {
         path: 'assets/paint/paint3.jpg',
         cost: 20000,
+        width: '100%',
         liked: false
       },
       {
         path: '../assets/paint/paint4.jpg',
         cost: 30000,
+        width: '100%',
         liked: false
       },
       {
         path: '../assets/paint/paint5.jpg',
         cost: 40000,
+        width: '100%',
         liked: false
       },
       {
         path: '../assets/paint/paint6.jpg',
         cost: 5000,
+        width: '100%',
         liked: false
       },
       {
         path: '../assets/paint/paint7.jpg',
         cost: 60000,
+        width: '100%',
         liked: false
       },
       {
         path: '../assets/paint/paint8.jpg',
         cost: 2500000,
+        width: '100%',
         liked: false
       },
       {
         path: '../assets/paint/paint9.jpg',
+        cost: 80000,
+        width: '100%',
+        liked: false
+      },
+      {
+        path: '../assets/paint/paint10.jpg',
         cost: 100000,
+        width: '100%',
         liked: false
       },
       {
-        path: '../assets/vd.jpg',
-        cost: 50000,
+        path: '../assets/paint/paint11.jpg',
+        cost: 60000,
+        width: '140px',
         liked: false
       },
       {
-        path: '../assets/vd.jpg',
-        cost: 120000,
-        liked: false
-      },
-      {
-        path: '../assets/vd.jpg',
+        path: '../assets/paint/paint12.jpg',
         cost: 200000,
+        width: '140px',
         liked: false
       }
     ];

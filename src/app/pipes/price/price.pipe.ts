@@ -6,11 +6,12 @@ import { filterQueryId } from '@angular/core/src/view/util';
   name: 'price'
 })
 export class PricePipe implements PipeTransform {
-  costVal:any;
+  // costVal:any;
   transform(value: any, args?: any): any {
     console.log(value, args[0]*1000 , args[1]*1000);
-    value.forEach(function (arrayItem) {
-     return this.costVal = this.costVal.push(arrayItem.cost);
-    })
+    // value.forEach(function (arrayItem) {
+    //  return this.costVal = this.costVal.push(arrayItem.cost);
+    // })
+    return value;
   }
 }

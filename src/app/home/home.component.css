@@ -19,12 +19,12 @@ aside .jumbotron,aside .jumbotron p{
     font-size: 30px;
 }
 aside .jumbotron p,aside .jumbotron label{
-    background: rgba(134, 94, 25, 0.3);
     padding: 5px 10px;
-    color: #ffffff;
 }
 aside .jumbotron label{
+    background: rgba(134, 94, 25, 0.3);
     font-size: 18px;
+    color: #ffffff;
 }
 article > div{
     display: inline-block;

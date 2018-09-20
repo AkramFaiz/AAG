@@ -14,26 +14,20 @@
 
 <p-sidebar [(visible)]="visibleSidebar2" position="right" [baseZIndex]="10000">
   <h4 [ngStyle]="{'font-weight':'normal'}">Welcome, {{uName}}</h4>
-  <ul class="sideHeader">
-      <li class="pt-2 pl-3 pr-1 pb-2"><label>My Cart</label> <span class="cartIcon"></span><pre>{{cartCount}}</pre></li>
-      <li class="pt-2 pl-3 pr-1 pb-2"><label>Add Item</label>  <span class="addItemIcon"></span> </li>
-      <li class="pt-2 pl-3 pr-1 pb-2"><label>About Me</label>  <span class="iIcon"></span></li>
-      <li class="pt-2 pl-3 pr-1 pb-2" (click)="logoutClk()"><label>Logout</label> <span class="logoutIcon"></span></li>
+  <!-- <ul class="sideHeader">
+    <li class="pt-2 pl-3 pr-1 pb-2"><label>My Cart</label> <span class="cartIcon"></span><pre>{{cartCount}}</pre></li>
+    <li class="pt-2 pl-3 pr-1 pb-2"><label>Add Item</label>  <span class="addItemIcon"></span> </li>
+    <li class="pt-2 pl-3 pr-1 pb-2"><label>About Me</label>  <span class="iIcon"></span></li>
+    <li class="pt-2 pl-3 pr-1 pb-2" (click)="logoutClk()"><label>Logout</label> <span class="logoutIcon"></span></li>
+</ul> -->
+
+  <ul class="sideHeader list-group">
+      <li class="pt-2 pl-3 pr-1 pb-2 list-group-item d-flex justify-content-between align-items-center" routerLink="/mycart" (click)="visibleSidebar2 = false;">My Cart <span class="cartIcon badge badge-primary badge-pill"></span></li>
+      <li class="pt-2 pl-3 pr-1 pb-2 list-group-item d-flex justify-content-between align-items-center" routerLink="/dashboard" (click)="visibleSidebar2 = false;">Add Item <pre> - admin</pre><span class="addItemIcon badge badge-primary badge-pill"></span> </li>
+      <li class="pt-2 pl-3 pr-1 pb-2 list-group-item d-flex justify-content-between align-items-center" routerLink="/aboutme" (click)="visibleSidebar2 = false;">About Me <span class="iIcon badge badge-primary badge-pill"></span></li>
+      <li class="pt-2 pl-3 pr-1 pb-2 list-group-item d-flex justify-content-between align-items-center" (click)="logoutClk()" (click)="visibleSidebar2 = false;">Logout <span class="logoutIcon badge badge-primary badge-pill"></span></li>
   </ul>
-  <ul class="list-group">
-    <li class="list-group-item d-flex justify-content-between align-items-center">
-      Cras justo odio
-      <span class="badge badge-primary badge-pill">14</span>
-    </li>
-    <li class="list-group-item d-flex justify-content-between align-items-center">
-      Dapibus ac facilisis in
-      <span class="badge badge-primary badge-pill">2</span>
-    </li>
-    <li class="list-group-item d-flex justify-content-between align-items-center">
-      Morbi leo risus
-      <span class="badge badge-primary badge-pill">1</span>
-    </li>
-  </ul>
+  
   <h4 class="mt-5 mb-3">Quick Links</h4>
     <div id="tagcloud">
         <a href="#" rel='4' routerLink="/painting" (click)="visibleSidebar2 = false;"><span>Painting</span></a>

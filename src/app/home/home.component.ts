@@ -8,7 +8,7 @@ import { trigger, state, style, animate, transition, keyframes } from '@angular/
   animations: [
     trigger('leafLeft', [
       transition('void => *',[
-        animate('5s ease-in',keyframes([
+        animate('3s ease-in',keyframes([
             style({
               offset: 0,
               opacity: 0,
@@ -17,14 +17,14 @@ import { trigger, state, style, animate, transition, keyframes } from '@angular/
             style({
               offset: 1,
               opacity: 1,
-              transform: 'translateX(20px)'
+              transform: 'translateX(0)'
             })
         ]))
       ])  
     ]),
     trigger('leafRight', [
       transition(':enter',[
-        animate('5s ease-in',keyframes([
+        animate('3s ease-in',keyframes([
             style({
               offset: 0,
               opacity: 0,
@@ -33,10 +33,13 @@ import { trigger, state, style, animate, transition, keyframes } from '@angular/
             style({
               offset: 1,
               opacity: 1,
-              transform: 'translateX(20px)'
+              transform: 'translateX(0)'
             })
         ]))
       ])  
+    ]),
+    trigger('blurEffect',[
+      transition(':enter',[style({ opacity: 0 }),animate(5000)])
     ]) 
   ]
 })

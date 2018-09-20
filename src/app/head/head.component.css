@@ -56,6 +56,11 @@ header label{
 #tagcloud a sup{
     font-size: 12px;
 }
+#tagcloud a:hover{
+    text-decoration: none;
+    background: #ab843a;
+    color: #45444b;
+}
 .sideHeader label,.sideHeader span{
     display: inline-block;
     vertical-align: middle;
@@ -84,30 +89,31 @@ header label{
 }
 .cartIcon,.logoutIcon,.iIcon,.addItemIcon{
     background: url(../../assets/cart.svg) no-repeat center;   
-    background-size: 25px 25px;
+    background-size: 20px 20px;
     height: 30px;
     position: absolute;
     bottom: 8px;
+    right: 25px;
 }
 .iIcon{
     background: url(../../assets/i.svg) no-repeat center;   
-    background-size: 12px 25px;
+    background-size: 10px 20px;
 }
 .addItemIcon{
     background: url(../../assets/addItem.svg) no-repeat center;   
-    background-size: 22px 22px;
+    background-size: 18px 18px;
 }
 .logoutIcon{
     background: url(../../assets/logout.svg) no-repeat center;   
-    background-size: 25px 25px;
+    background-size: 20px 20px;
 }
 pre{
     position: absolute;
-    top: -1px;
-    right: 30px;
+    top: 5px;
+    left: 80px;
     color: #c2c2c2;
-    font-family: font1;
-    font-size: 16px;
+    font-family: fontL;
+    font-size: 12px;
 }
 
 @media only screen and (max-width: 768px) {

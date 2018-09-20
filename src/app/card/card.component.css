@@ -3,6 +3,9 @@ div{
     padding: 0 0 35px 0;
     height: 100%;
 }
+div:hover {
+    cursor: pointer;
+}
 div,img{
     border-radius: 10px;
 }

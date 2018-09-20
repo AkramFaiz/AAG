@@ -38,6 +38,8 @@ import { registerLocaleData } from '@angular/common';
 import { NgZorroAntdModule, NZ_I18N, en_US, zh_CN } from 'ng-zorro-antd';
 import en from '@angular/common/locales/en';
 import zh from '@angular/common/locales/zh';
+import { MyCartComponent } from './my-cart/my-cart.component';
+import { AboutMeComponent } from './about-me/about-me.component';
 registerLocaleData(zh);
 
 @NgModule({
@@ -52,7 +54,9 @@ registerLocaleData(zh);
     PhotographyComponent,
     PaintingComponent,
     PopupComponent,
-    PricePipe
+    PricePipe,
+    MyCartComponent,
+    AboutMeComponent
   ],
   imports: [
     BrowserModule,

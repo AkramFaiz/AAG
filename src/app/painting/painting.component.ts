@@ -13,6 +13,7 @@ export class PaintingComponent implements OnInit {
   rangeVal: number[] = [0, 100];
   cardData: any;
   orderCode = 1;
+  curKeyVal = 'cost';
   singleValue;
   rangeValue;
 

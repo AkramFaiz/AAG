@@ -2,7 +2,7 @@ section{
     background: url(../../assets/paint_bg.jpg) no-repeat center;
     background-size: cover;
 }
-.asceSort,.descSort{
+.asceSort,.descSort,.like{
     display: inline-block;
     vertical-align: middle;
     width: 25px;
@@ -18,6 +18,11 @@ section{
     background-size: 100% 100%;
     border-radius: 100%;  
 }
+.like:hover{
+    background: url(../../assets/like.svg) no-repeat center rgba(255,255,255,0.2);   
+    background-size: 65% 65%;
+    border-radius: 100%;  
+}
 .asceSort{
     background: url(../../assets/asce.svg) no-repeat center;
     background-size: 100% 100%; 
@@ -25,6 +30,10 @@ section{
 .descSort{
     background: url(../../assets/desc.svg) no-repeat center;
     background-size: 100% 100%; 
+}
+.like{
+    background: url(../../assets/like.svg) no-repeat center;   
+    background-size: 65% 65%;
 }
 .rangeDiv{
     font-family: fontL;

@@ -41,6 +41,7 @@ import zh from '@angular/common/locales/zh';
 import { MyCartComponent } from './my-cart/my-cart.component';
 import { AboutMeComponent } from './about-me/about-me.component';
 import { OrderByPipe } from './pipes/orderBy/order-by.pipe';
+import { FooterComponent } from './footer/footer.component';
 
 registerLocaleData(zh);
 
@@ -59,7 +60,8 @@ registerLocaleData(zh);
     PricePipe,
     MyCartComponent,
     AboutMeComponent,
-    OrderByPipe
+    OrderByPipe,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

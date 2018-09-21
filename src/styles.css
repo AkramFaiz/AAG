@@ -62,6 +62,10 @@ header,.ui-widget-content{
     font-family: fontL;
     src: url(assets/font/rale/Raleway-Light.ttf);
 }
+@font-face {
+    font-family: fontLI;
+    src: url(assets/font/rale/Raleway-LightItalic.ttf);
+}
 section{
     padding: 55px 15px 10px 15px;
     width: 100%;

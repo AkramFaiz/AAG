@@ -50,5 +50,6 @@ export class HeadComponent implements OnInit {
     this.uName = 'Username';
     this.logged = false;
     this.visibleSidebar2 = false;
+
   }
 }

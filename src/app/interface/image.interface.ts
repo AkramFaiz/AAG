@@ -3,4 +3,6 @@ export interface ImageType {
     cost: number;
     width: string;
     liked: boolean;
+    addedToCart: boolean;
+    likeCount: number;
 }

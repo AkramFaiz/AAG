@@ -9,6 +9,7 @@ import { ImageType } from '../interface/image.interface';
   styleUrls: ['./card.component.css'],
 })
 export class CardComponent implements OnInit {
+  likeCount = 0;
   likeFlag = false;
   loginTrue = false;
   cartAct = false;
@@ -33,6 +34,13 @@ export class CardComponent implements OnInit {
   }
   clear() {
       this.messageService.clear();
+  }
+  likeClk(ee){
+    if(ee.target.className == 'unlike'){
+      return this.imageList.likeCount++;
+    }else{
+      return this.imageList.likeCount--;
+    }
   }
   ngOnInit() {
     // this.list.filter(e => this.list[0] === 1);

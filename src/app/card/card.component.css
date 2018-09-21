@@ -10,22 +10,29 @@ div,img{
     border-radius: 10px;
 }
 ul{
-    text-align: left;
     padding: 5px;
+    position: relative;
 }
 ul li{
-    display: inline-block;
-    width: 15%;
-    text-align: right;
+    position: absolute;
 }
 ul li:first-child{
-    width: 70%;
-    text-align: left;
+    left: 5px;
 }
-span,label{
+ul li:nth-child(2){
+    right: 50px;
+}
+ul li:last-child{
+    right: 5px;
+}
+span,label,i{
     display: inline-block;
     vertical-align: middle;
     color: #e0995e;
+}
+i{
+    font-size: 14px;
+    font-family: fontLI;
 }
 ul li span{
     width: 45px;

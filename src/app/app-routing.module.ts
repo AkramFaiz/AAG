@@ -17,7 +17,7 @@ const routes: Routes = [
     { path: 'home', component: HomeComponent, },
     { path: 'mycart', component: MyCartComponent, },
     { path: 'aboutme', component: AboutMeComponent, },
-    { path: 'photography', component: PhotographyComponent, canActivate: [AuthGuard] },
+    { path: 'photography', component: PhotographyComponent },
     { path: 'painting', component: PaintingComponent, },
     { path: 'painting', component: PaintingComponent, },
     { path: 'painting', component: PaintingComponent, },

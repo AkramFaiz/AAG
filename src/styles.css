@@ -102,6 +102,9 @@ app-login .ui-card-title{
     font-weight: 100;
     font-size: 34px;
 }
+.ui-sidebar{
+    font-family: font1;
+}
 .ui-state-default,.ui-inputgroup .ui-inputgroup-addon{
     background: #ab843a;
 }

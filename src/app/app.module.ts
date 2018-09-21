@@ -40,6 +40,8 @@ import en from '@angular/common/locales/en';
 import zh from '@angular/common/locales/zh';
 import { MyCartComponent } from './my-cart/my-cart.component';
 import { AboutMeComponent } from './about-me/about-me.component';
+import { OrderByPipe } from './pipes/orderBy/order-by.pipe';
+
 registerLocaleData(zh);
 
 @NgModule({
@@ -56,7 +58,8 @@ registerLocaleData(zh);
     PopupComponent,
     PricePipe,
     MyCartComponent,
-    AboutMeComponent
+    AboutMeComponent,
+    OrderByPipe
   ],
   imports: [
     BrowserModule,

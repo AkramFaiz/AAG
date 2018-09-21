@@ -2,20 +2,22 @@
   <div class="internalDiv">
         <div class="rangeDiv">
             <ul>
-                <li><label>Price Range: </label></li>
-                <li [ngStyle]="{'width':'210px','position':'relative'}">                       
+                <li class="d-flex d-sm-inline-flex d-md-inline-flex d-lg-inline-flex d-xl-inline-flex"><label>Price Range: </label></li>                
+                <li [ngStyle]="{'width':'210px','position':'relative'}">                                    
                       <nz-slider
                         #ranger
                         nzRange
                         [nzStep]="10"
-                        [nzDefaultValue]="[20, 50]"
+                        [nzDefaultValue]="[0, 100]"
                         [(ngModel)]="rangeValue"
                         (nzOnAfterChange)="onAfterChange($event)"
-                      ></nz-slider>                   
+                      ></nz-slider>                  
                 </li>
+                <li>  <label class="asceSort" (click)="orderCode = 1"></label>  </li>  
+                <li>  <label class="descSort" (click)="orderCode = -1"></label>  </li>  
             </ul>           
         </div>
-        <div class="col-xs-12 col-sm-6 col-md-5 col-lg-3 ml-0 mr-0 mb-4 mt-0 cardDiv animated pulse" *ngFor="let image of images | price: ranger?.value">
+        <div class="col-xs-12 col-sm-6 col-md-5 col-lg-3 ml-0 mr-0 mb-4 mt-0 cardDiv animated pulse" *ngFor="let image of images | price: ranger?.value | orderBy: {curKey: 'cost', orderCode: orderCode}">
             <app-card [imageList]="image"></app-card>
         </div>
     <p-toast position="top-right" key="cart"></p-toast>

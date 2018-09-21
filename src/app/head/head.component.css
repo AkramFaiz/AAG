@@ -46,6 +46,7 @@ header label{
     font-size: 30px;
 }
 #tagcloud a{
+    font-family: fontL;
     display: inline-block;
     margin: 1%;
     background: #45444b;

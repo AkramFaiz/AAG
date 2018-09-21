@@ -12,7 +12,7 @@ export class PaintingComponent implements OnInit {
   detailView = false;
   rangeVal: number[] = [0, 100];
   cardData: any;
-
+  orderCode = 1;
   singleValue;
   rangeValue;
 
@@ -22,7 +22,7 @@ export class PaintingComponent implements OnInit {
     this.images = [
       {
         path: '/assets/paint/paint1.jpg',
-        cost: 300000,
+        cost: 85000,
         width: '100%',
         liked: true
       },
@@ -64,7 +64,7 @@ export class PaintingComponent implements OnInit {
       },
       {
         path: '../assets/paint/paint8.jpg',
-        cost: 2500000,
+        cost: 99000,
         width: '100%',
         liked: false
       },
@@ -76,7 +76,7 @@ export class PaintingComponent implements OnInit {
       },
       {
         path: '../assets/paint/paint10.jpg',
-        cost: 100000,
+        cost: 99000,
         width: '100%',
         liked: false
       },
@@ -88,7 +88,7 @@ export class PaintingComponent implements OnInit {
       },
       {
         path: '../assets/paint/paint12.jpg',
-        cost: 200000,
+        cost: 89000,
         width: '140px',
         liked: false
       }

@@ -2,6 +2,30 @@ section{
     background: url(../../assets/paint_bg.jpg) no-repeat center;
     background-size: cover;
 }
+.asceSort,.descSort{
+    display: inline-block;
+    vertical-align: middle;
+    width: 25px;
+    height: 25px;
+}
+.asceSort:hover{
+    background: url(../../assets/asce.svg) no-repeat center rgba(255,255,255,0.2);
+    background-size: 100% 100%;
+    border-radius: 100%;
+}
+.descSort:hover{
+    background: url(../../assets/desc.svg) no-repeat center rgba(255,255,255,0.2);
+    background-size: 100% 100%;
+    border-radius: 100%;  
+}
+.asceSort{
+    background: url(../../assets/asce.svg) no-repeat center;
+    background-size: 100% 100%; 
+}
+.descSort{
+    background: url(../../assets/desc.svg) no-repeat center;
+    background-size: 100% 100%; 
+}
 .rangeDiv{
     font-family: fontL;
     color: #ab843a;

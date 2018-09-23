@@ -8,7 +8,7 @@ import { PaintServiceService } from '../services/paint-service.service';
   styleUrls: ['./painting.component.css']
 })
 export class PaintingComponent implements OnInit {
-  images: ImageData;
+  images: ImageType[] = [];
   detailView = false;
   rangeVal: number[] = [0, 100];
   cardData: any;
@@ -20,7 +20,7 @@ export class PaintingComponent implements OnInit {
   constructor(private paintS: PaintServiceService) {
   }
   ngOnInit() {
-      this.paintS.getPaintList().subscribe( (res: ImageData) => { this.images = res; });
+      this.paintS.getPaintList().subscribe( (res: ImageType[]) => { this.images = res; });
   }
   curImage(e) {
     console.log('image: ' + e);

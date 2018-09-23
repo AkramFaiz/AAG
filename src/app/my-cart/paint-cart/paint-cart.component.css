@@ -2,9 +2,10 @@
     background: rgba(90, 75, 75, 0.51);
     position: relative;
 }
-span{
+span,label{
     display: inline-block;
     vertical-align: middle;
+    margin: 0;
 }
 .fa {
     position: absolute;
@@ -17,4 +18,36 @@ span{
     background-size: 100%;
     width: 18px;
     height: 18px;
+}
+ul li{
+    float: left;
+    text-align: center;
+    background: rgba(217, 217, 217, 0.12);
+}
+#paytm,#aPay,#nBank,#purse{
+    width: 100%;
+    height: 50px;
+}
+#paytm{
+    background: url(../../../assets/paytm.svg) no-repeat center;   
+    background-size: 100px;
+}
+#aPay{
+    background: url(../../../assets/amazon.svg) no-repeat center;   
+    background-size: 100px;
+}
+#nBank{
+    background: url(../../../assets/bank.svg) no-repeat center;   
+    background-size: 50px;
+}
+#purse{
+    background: url(../../../assets/card.svg) no-repeat center;   
+    background-size: 50px;
+}
+h4,h5,p label{
+    color: #f7c463;
+}
+
+@media only screen and (max-width: 768px) {
+
 }

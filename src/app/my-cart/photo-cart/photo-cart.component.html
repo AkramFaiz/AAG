@@ -3,8 +3,8 @@
       <h4>Cart Items</h4>
       <div class="ml-0 mr-0 mb-2 mt-2 cardDiv" *ngFor="let image of cardItems">
           <img src="{{image.path}}" width="90px" height="90px" alt="image">
-          <span id="price" class="ml-2"></span><label for="price">{{image.cost|number}}</label>
-          <span id="price" class="ml-2">Catergory: </span><label for="price">{{image.category| ''}}</label>
+          <span id="price" class="ml-2"></span><label for="price">{{image.cost | number}}</label>
+          <span id="price" class="ml-2">Catergory: </span><label for="price">{{image.category}}</label>
           <i class="fa fa-times-circle"></i>
       </div>
     </aside>

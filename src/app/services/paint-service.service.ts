@@ -1,5 +1,6 @@
 import { Injectable, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { ImageType } from '../interface/image.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +11,6 @@ export class PaintServiceService implements OnInit {
   ngOnInit() {
   }
   getPaintList() {
-    return this.http.get<ImageData>(this.configUrl);
+    return this.http.get<ImageType[]>(this.configUrl);
   }
 }

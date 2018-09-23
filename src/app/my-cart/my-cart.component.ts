@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./my-cart.component.css']
 })
 export class MyCartComponent implements OnInit {
-  items: MenuItem;
   ngOnInit() {
 
   }

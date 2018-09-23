@@ -5,7 +5,7 @@
       "width": "100%",
       "liked": true,
       "likeCount": 1111,
-      "addedToCart": false
+      "addedToCart": true
     },
     {
       "path": "../assets/paint/paint2.jpg",
@@ -45,7 +45,7 @@
         "width": "100%",
         "liked": false,
         "likeCount": 95,
-        "addedToCart": false
+        "addedToCart": true
       },
       {
         "path": "../assets/paint/paint7.jpg",

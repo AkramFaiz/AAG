@@ -19,6 +19,8 @@ import {ToastModule} from 'primeng/toast';
 import {MessageService} from 'primeng/api';
 import {LightboxModule} from 'primeng/lightbox';
 import {PaginatorModule} from 'primeng/paginator';
+import {TabMenuModule} from 'primeng/tabmenu';
+// import {MenuItem} from 'primeng/api';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -42,6 +44,8 @@ import { MyCartComponent } from './my-cart/my-cart.component';
 import { AboutMeComponent } from './about-me/about-me.component';
 import { OrderByPipe } from './pipes/orderBy/order-by.pipe';
 import { FooterComponent } from './footer/footer.component';
+import { PaintCartComponent } from './my-cart/paint-cart/paint-cart.component';
+import { PhotoCartComponent } from './my-cart/photo-cart/photo-cart.component';
 
 registerLocaleData(zh);
 
@@ -61,7 +65,9 @@ registerLocaleData(zh);
     MyCartComponent,
     AboutMeComponent,
     OrderByPipe,
-    FooterComponent
+    FooterComponent,
+    PaintCartComponent,
+    PhotoCartComponent
   ],
   imports: [
     BrowserModule,
@@ -79,6 +85,7 @@ registerLocaleData(zh);
     LightboxModule,
     PaginatorModule,
     AppRoutingModule,
+    TabMenuModule,
     NgZorroAntdModule
   ],
   providers: [MessageService, { provide: NZ_I18N, useValue: zh_CN }],

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ImageType } from './../interface/image.interface';
-
+import { PaintServiceService } from '../services/paint-service.service';
 
 @Component({
   selector: 'app-painting',
@@ -8,7 +8,7 @@ import { ImageType } from './../interface/image.interface';
   styleUrls: ['./painting.component.css']
 })
 export class PaintingComponent implements OnInit {
-  images: ImageType[];
+  images: ImageData;
   detailView = false;
   rangeVal: number[] = [0, 100];
   cardData: any;
@@ -17,107 +17,10 @@ export class PaintingComponent implements OnInit {
   singleValue;
   rangeValue;
 
-  constructor() {
+  constructor(private paintS: PaintServiceService) {
   }
   ngOnInit() {
-    this.images = [
-      {
-        path: '/assets/paint/paint1.jpg',
-        cost: 85000,
-        width: '100%',
-        liked: true,
-        likeCount: 2424,
-        addedToCart: false
-      },
-      {
-        path: '../../assets/paint/paint2.jpg',
-        cost: 25000,
-        width: '100%',
-        liked: false,
-        likeCount: 216,
-        addedToCart: false
-      },
-      {
-        path: 'assets/paint/paint3.jpg',
-        cost: 20000,
-        width: '100%',
-        liked: false,
-        likeCount: 323,
-        addedToCart: false
-      },
-      {
-        path: '../assets/paint/paint4.jpg',
-        cost: 30000,
-        width: '100%',
-        liked: false,
-        likeCount: 123,
-        addedToCart: false
-      },
-      {
-        path: '../assets/paint/paint5.jpg',
-        cost: 40000,
-        width: '100%',
-        liked: false,
-        likeCount: 1573,
-        addedToCart: false
-      },
-      {
-        path: '../assets/paint/paint6.jpg',
-        cost: 5000,
-        width: '100%',
-        liked: false,
-        likeCount: 56,
-        addedToCart: false
-      },
-      {
-        path: '../assets/paint/paint7.jpg',
-        cost: 60000,
-        width: '100%',
-        liked: false,
-        likeCount: 723,
-        addedToCart: false
-      },
-      {
-        path: '../assets/paint/paint8.jpg',
-        cost: 99000,
-        width: '100%',
-        liked: false,
-        likeCount: 1855,
-        addedToCart: false
-      },
-      {
-        path: '../assets/paint/paint9.jpg',
-        cost: 80000,
-        width: '100%',
-        liked: false,
-        likeCount: 794,
-        addedToCart: false
-      },
-      {
-        path: '../assets/paint/paint10.jpg',
-        cost: 99000,
-        width: '100%',
-        liked: false,
-        likeCount: 999,
-        addedToCart: false
-      },
-      {
-        path: '../assets/paint/paint11.jpg',
-        cost: 60000,
-        width: '140px',
-        liked: false,
-        likeCount: 898,
-        addedToCart: false
-      },
-      {
-        path: '../assets/paint/paint12.jpg',
-        cost: 89000,
-        width: '140px',
-        liked: false,
-        likeCount: 1111,
-        addedToCart: false
-      }
-    ];
+      this.paintS.getPaintList().subscribe( (res: ImageData) => { this.images = res; });
   }
   curImage(e) {
     console.log('image: ' + e);

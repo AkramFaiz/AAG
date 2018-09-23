@@ -77,7 +77,7 @@ section > div.internalDiv{
     position: absolute;
     width: 100%;
     height: 100%;
-    padding: 55px 25px 0 25px;
+    padding: 55px 25px 5px 25px;
     top: 0;
     left: 0;
     overflow: auto;
@@ -109,8 +109,12 @@ app-login .ui-card-title{
 .ui-sidebar{
     font-family: font1;
 }
-.ui-state-default,.ui-inputgroup .ui-inputgroup-addon{
+app-login .ui-state-default,.ui-inputgroup .ui-inputgroup-addon{
     background: #ab843a;
+}
+app-my-cart .ui-state-active{
+    background: #ab843a;
+    border: none;
 }
 .ui-button.ui-widget.ui-state-default.ui-corner-all.ui-button-text-only{
     font-size: 14px;
@@ -136,6 +140,21 @@ app-login .ui-toast .ui-toast-message-content{
 app-painting .ui-toast .ui-toast-message-content{
     background: #ffe399;
 }
+app-paint-cart div,app-photo-cart div{
+    height: 93%;
+    overflow: auto;
+    border: 1px solid rgba(171, 132, 58, 0.36);
+    width: 100%;
+    margin: auto;
+    padding: 2% 0;
+}
+app-paint-cart div aside,app-photo-cart div aside,app-paint-cart div article,app-photo-cart div article{
+    height: 100%;
+    float: left;
+}
+app-paint-cart div aside,app-photo-cart div aside{
+    border-right: 1px solid  rgba(171, 132, 58, 0.36);
+}
 
 app-popup{
     position: fixed;
@@ -149,18 +168,15 @@ app-popup{
     background: rgba(0, 0, 0, 0.7);
 }
 
-app-footer{
-    color: #e2e1e1;
-    text-align: center;
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-    font-size: small;
-}
-
 @media only screen and (max-width: 768px) {
     section{
-        padding: 80px 25px 0 15px;
+        padding: 80px 25px 5px 15px;
+    }
+    section > div.internalDiv{
+        padding: 55px 25px 20px 25px;
+    } 
+    app-paint-cart div aside, app-photo-cart div aside{
+        border-right: none;
     }
 }
 

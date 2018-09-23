@@ -1,0 +1,42 @@
+
+section{
+    background: url(../../assets/aboutMe.jpg) repeat center;
+    background-size: contain;
+}
+section > div{
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    color: #ab843a;
+    background: rgba(35, 33, 47, 0.93);
+    font-family: font2;
+}
+ul{
+    margin: 0;
+    width: 100%;
+    height: 7%;
+}
+ul li{
+    float: left;
+    padding: 5px 20px 0px 20px;
+    outline: none;
+}
+ul li:first-child{
+    border-right: 1px solid #ab843a;
+}
+ul li pre{
+    display: none;
+}
+ul li.activeTab{
+    color: #f7c463;
+    padding: 0px 20px;
+}
+ul li:hover{
+    color:#f7c463;
+} 
+ul li.activeTab > pre{
+    margin: 0 0 2px 0;
+    border: 1.5px solid #f7c463;
+    display: block;
+    border-radius: 3px;
+}

@@ -8,6 +8,8 @@ import { PaintingComponent } from './painting/painting.component';
 import { AuthGuard } from './guard/auth.guard';
 import { MyCartComponent } from './my-cart/my-cart.component';
 import { AboutMeComponent } from './about-me/about-me.component';
+import { PaintCartComponent } from './my-cart/paint-cart/paint-cart.component';
+import { PhotoCartComponent } from './my-cart/photo-cart/photo-cart.component';
 
 const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -16,7 +18,10 @@ const routes: Routes = [
     { path: 'dashboard', component: DashboardComponent, },
     // { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
     { path: 'home', component: HomeComponent, },
-    { path: 'mycart', component: MyCartComponent, },
+    { path: 'mycart', component: MyCartComponent,
+        children: [ { path: 'paint', component: PaintCartComponent},
+                    { path: 'photo', component: PhotoCartComponent } ]
+    },
     { path: 'aboutme', component: AboutMeComponent, },
     { path: 'photography', component: PhotographyComponent },
     { path: 'painting', component: PaintingComponent, },

@@ -1,3 +1,10 @@
-<p>
-  my-cart works!
-</p>
+<section>
+  <div>
+    <ul>
+      <li routerLink="/mycart/paint" routerLinkActive="activeTab" [routerLinkActiveOptions]="{exact: true}"> <pre></pre>
+        Painting</li>
+      <li routerLink="/mycart/photo" routerLinkActive="activeTab"><pre></pre> Photography</li>
+    </ul>
+    <router-outlet></router-outlet>
+  </div>
+</section>

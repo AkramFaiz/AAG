@@ -1,0 +1,98 @@
+[
+    {
+      "path": "../assets/paint/paint1.jpg",
+      "cost": 85000,
+      "width": "100%",
+      "liked": true,
+      "likeCount": 1111,
+      "addedToCart": false
+    },
+    {
+      "path": "../assets/paint/paint2.jpg",
+      "cost": 43000,
+      "width": "100%",
+      "liked": false,
+      "likeCount": 342,
+      "addedToCart": false
+    },
+    {
+        "path": "../assets/paint/paint3.jpg",
+        "cost": 40000,
+        "width": "100%",
+        "liked": false,
+        "likeCount": 654,
+        "addedToCart": false
+      },
+      {
+        "path": "../assets/paint/paint4.jpg",
+        "cost": 35000,
+        "width": "100%",
+        "liked": false,
+        "likeCount": 275,
+        "addedToCart": false
+      },
+      {
+        "path": "../assets/paint/paint5.jpg",
+        "cost": 75000,
+        "width": "100%",
+        "liked": false,
+        "likeCount": 879,
+        "addedToCart": false
+      },
+      {
+        "path": "../assets/paint/paint6.jpg",
+        "cost": 15000,
+        "width": "100%",
+        "liked": false,
+        "likeCount": 95,
+        "addedToCart": false
+      },
+      {
+        "path": "../assets/paint/paint7.jpg",
+        "cost": 48000,
+        "width": "100%",
+        "liked": false,
+        "likeCount": 544,
+        "addedToCart": false
+      },
+      {
+        "path": "../assets/paint/paint8.jpg",
+        "cost": 99000,
+        "width": "100%",
+        "liked": false,
+        "likeCount": 3215,
+        "addedToCart": true
+      },
+      {
+        "path": "../assets/paint/paint9.jpg",
+        "cost": 55000,
+        "width": "100%",
+        "liked": false,
+        "likeCount": 777,
+        "addedToCart": false
+      },
+      {
+        "path": "../assets/paint/paint_10.jpg",
+        "cost": 85000,
+        "width": "100%",
+        "liked": false,
+        "likeCount": 1321,
+        "addedToCart": false
+      },
+      {
+        "path": "../assets/paint/paint11.jpg",
+        "cost": 65000,
+        "width": "140px",
+        "liked": false,
+        "likeCount": 898,
+        "addedToCart": false
+      },
+      {
+        "path": "../assets/paint/paint12.jpg",
+        "cost": 95000,
+        "width": "140px",
+        "liked": false,
+        "likeCount": 1216,
+        "addedToCart": true
+      }
+]

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {MenuItem} from 'primeng/api';
 
 @Component({
   selector: 'app-my-cart',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./my-cart.component.css']
 })
 export class MyCartComponent implements OnInit {
-
-  constructor() { }
-
+  items: MenuItem[];
+  activeItem: MenuItem;
   ngOnInit() {
+      this.items = [
+          {label: 'Painting', icon: 'fa fa-fw fa-paint-brush'},
+          {label: 'Photography', icon: 'fa fa-fw fa-camera'}
+      ];
+      this.activeItem = this.items[0];
   }
-
 }

@@ -140,19 +140,20 @@ app-login .ui-toast .ui-toast-message-content{
 app-painting .ui-toast .ui-toast-message-content{
     background: #ffe399;
 }
-app-paint-cart div,app-photo-cart div{
+app-paint-cart > div,app-photo-cart > div{
     height: 93%;
-    overflow: auto;
     border: 1px solid rgba(171, 132, 58, 0.36);
     width: 100%;
     margin: auto;
     padding: 2% 0;
 }
-app-paint-cart div aside,app-photo-cart div aside,app-paint-cart div article,app-photo-cart div article{
+app-paint-cart > div aside,app-photo-cart > div aside,app-paint-cart > div article,
+app-photo-cart > div article{
     height: 100%;
     float: left;
+    overflow: auto;
 }
-app-paint-cart div aside,app-photo-cart div aside{
+app-paint-cart > div aside,app-photo-cart > div aside{
     border-right: 1px solid  rgba(171, 132, 58, 0.36);
 }
 
@@ -175,8 +176,19 @@ app-popup{
     section > div.internalDiv{
         padding: 55px 25px 20px 25px;
     } 
-    app-paint-cart div aside, app-photo-cart div aside{
+    app-paint-cart > div, app-photo-cart > div{
+        overflow: auto;
+    }
+    app-paint-cart > div aside, app-photo-cart > div aside{
         border-right: none;
+    }
+    app-paint-cart > div aside,app-photo-cart > div aside,app-paint-cart > div article,
+    app-photo-cart > div article{
+        height: auto;
+        overflow: unset !important;
+    }
+    app-paint-cart > div aside,app-photo-cart > div aside{
+        border-bottom: 1px solid  rgba(171, 132, 58, 0.36);
     }
 }
 

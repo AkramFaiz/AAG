@@ -1,0 +1,20 @@
+.cardDiv {
+    background: rgba(90, 75, 75, 0.51);
+    position: relative;
+}
+span{
+    display: inline-block;
+    vertical-align: middle;
+}
+.fa {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 20px;
+}
+#price{
+    background: url(../../../assets/rupee.svg) no-repeat center;   
+    background-size: 100%;
+    width: 18px;
+    height: 18px;
+}

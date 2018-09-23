@@ -20,7 +20,6 @@ import {MessageService} from 'primeng/api';
 import {LightboxModule} from 'primeng/lightbox';
 import {PaginatorModule} from 'primeng/paginator';
 import {TabMenuModule} from 'primeng/tabmenu';
-// import {MenuItem} from 'primeng/api';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';

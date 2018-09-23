@@ -19,10 +19,22 @@ span,label{
     width: 18px;
     height: 18px;
 }
+ul{
+    position: relative;
+}
 ul li{
     float: left;
     text-align: center;
     background: rgba(217, 217, 217, 0.12);
+}
+ul li i.active{
+    position: absolute;
+    background: url(../../../assets/click.png) no-repeat center;   
+    background-size: 100%;
+    width: 18px;
+    height: 18px;   
+    top: 5px;
+    left: 5px;
 }
 #paytm,#aPay,#nBank,#purse{
     width: 100%;
@@ -37,11 +49,11 @@ ul li{
     background-size: 100px;
 }
 #nBank{
-    background: url(../../../assets/bank.svg) no-repeat center;   
+    background: url(../../../assets/card.svg) no-repeat center;   
     background-size: 50px;
 }
 #purse{
-    background: url(../../../assets/card.svg) no-repeat center;   
+    background: url(../../../assets/purse.svg) no-repeat center;   
     background-size: 50px;
 }
 h4,h5,p label{

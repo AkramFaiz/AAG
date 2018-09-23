@@ -11,6 +11,10 @@ export class PaintCartComponent implements OnInit {
   resItems: ImageType[];
   cardItems: ImageType[] = [];
   totalCost = 0;
+  clickPurse = false;
+  clickPaytm = false;
+  clickaPay = false;
+  clickCard = false;
   constructor(private paintS: PaintServiceService) { }
   ngOnInit() {
     this.paintS.getPaintList().subscribe( (res: ImageType[]) => { this.resItems = res;

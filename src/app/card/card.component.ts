@@ -13,7 +13,7 @@ export class CardComponent implements OnInit {
   likeFlag = false;
   loginTrue = false;
   cartAct = false;
-  selCartList:ImageType[]=[];
+  selCartList: ImageType[] = [];
   res: any;
   // list: Array<number> = [1, 2, 3];
   @Input() imageList;
@@ -35,10 +35,10 @@ export class CardComponent implements OnInit {
   clear() {
       this.messageService.clear();
   }
-  likeClk(ee){
-    if(ee.target.className == 'unlike'){
+  likeClk(ee) {
+    if (ee.target.className === 'unlike') {
       return this.imageList.likeCount++;
-    }else{
+    } else {
       return this.imageList.likeCount--;
     }
   }

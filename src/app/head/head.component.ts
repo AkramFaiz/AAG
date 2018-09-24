@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../services/login.service';
-import { Router } from "@angular/router"
+import { Router } from '@angular/router';
 declare var $: any;
 
 @Component({
@@ -15,7 +15,7 @@ export class HeadComponent implements OnInit {
   logged: boolean;
   cartCount: number;
   koi: any;
-  constructor(private loginS: LoginService,private route:Router) { }
+  constructor(private loginS: LoginService, private route: Router) { }
 
   ngOnInit() {
     this.cartCount = this.cartCount ? this.cartCount : 0;

@@ -60,6 +60,23 @@ h4,h5,p label{
     color: #f7c463;
 }
 
-@media only screen and (max-width: 768px) {
+button{
+    position: absolute;
+    right: 10px;
+    bottom: 0;
+    color: #ab843a;
+    background: rgba(108, 117, 125, 0.4);
+}
+button:hover {
+    color: #23212f;
+    background: #ab843a;
+}
 
+@media only screen and (max-width: 768px) {
+    button{
+        position: relative;
+        float: right;
+        right: auto;
+        margin: 30px 0 10px 0;
+    }
 }

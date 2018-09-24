@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ImageType } from '../../interface/image.interface';
+import { MessageService } from 'primeng/api';
 import { PaintServiceService } from '../../services/paint-service.service';
 
 @Component({
@@ -15,7 +16,9 @@ export class PaintCartComponent implements OnInit {
   clickPaytm = false;
   clickaPay = false;
   clickCard = false;
-  constructor(private paintS: PaintServiceService) { }
+  value: number;
+  proFlag = false;
+  constructor(private paintS: PaintServiceService, private messageService: MessageService) { }
   ngOnInit() {
     this.paintS.getPaintList().subscribe( (res: ImageType[]) => { this.resItems = res;
       this.resItems.forEach(ele => {
@@ -26,5 +29,11 @@ export class PaintCartComponent implements OnInit {
         }
       });
     });
+  }
+  proceedClk() {
+    setTimeout( () => {
+      this.proFlag = false;
+      this.messageService.add({key: 'payment', severity: 'success', summary: 'Success', detail: 'Process Completed Successfully.'});
+    } , 15876000 );
   }
 }

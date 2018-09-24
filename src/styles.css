@@ -140,6 +140,13 @@ app-login .ui-toast .ui-toast-message-content{
 app-painting .ui-toast .ui-toast-message-content{
     background: #ffe399;
 }
+app-my-cart .ui-toast .ui-toast-message-content{
+    background: #3C8C3F;
+    color: #23212f;
+}
+app-my-cart .ui-widget-header{
+    background-color: rgba(171, 132, 58, 0.73);
+}
 app-paint-cart > div,app-photo-cart > div{
     height: 93%;
     border: 1px solid rgba(171, 132, 58, 0.36);

@@ -1,3 +1,4 @@
+
 <div>
   <aside class="col-sm-12 col-md-4 col-lg-4 col-xl-4 pb-3 pb-md-0">
     <h4>Cart Items</h4>
@@ -15,12 +16,15 @@
         <label for="price">{{totalCost|number}}.</label> 
       </p>
     <hr>
-    <h5> Quick Payment Modes </h5>
+    <h5> Payment Modes </h5>
     <ul>
       <li class="col-sm-6 col-md-6 col-lg-3 col-xl-3 " (click)="clickPaytm = !clickPaytm;clickaPay = false;clickPurse = false;clickCard = false;"> <i [ngClass]="{'active':clickPaytm}"></i> <span id="paytm"></span> <label for="paytm">PayTM</label></li>
       <li class="col-sm-6 col-md-6 col-lg-3 col-xl-3 " (click)="clickaPay = !clickaPay;clickPaytm = false;clickPurse = false;clickCard = false;"> <i [ngClass]="{'active':clickaPay}"></i> <span id="aPay"></span> <label for="aPay">Amazon Pay</label></li>
       <li class="col-sm-6 col-md-6 col-lg-3 col-xl-3 " (click)="clickCard = !clickCard;clickaPay = false;clickPurse = false;clickPaytm = false;"> <i [ngClass]="{'active':clickCard}"></i> <span id="nBank"></span> <label for="nBank">Debit / Credit</label></li>
       <li class="col-sm-6 col-md-6 col-lg-3 col-xl-3 " (click)="clickPurse = !clickPurse;clickaPay = false;clickPaytm = false;clickCard = false;"> <i [ngClass]="{'active':clickPurse}"></i> <span id="purse"></span> <label for="purse">My Purse</label></li>
     </ul>
+    <p-progressBar mode="indeterminate" [style]="{'height': '10px', 'bottom': '-15px'}" *ngIf="proFlag"></p-progressBar>
+    <button *ngIf="clickaPay||clickCard||clickPurse||clickPaytm" (click)="proceedClk(); proFlag=true" class="btn">Proceed</button>
   </article>
+  <p-toast position="bottom-center" key='payment'></p-toast>
 </div>

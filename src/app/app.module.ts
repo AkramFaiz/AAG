@@ -20,6 +20,7 @@ import {MessageService} from 'primeng/api';
 import {LightboxModule} from 'primeng/lightbox';
 import {PaginatorModule} from 'primeng/paginator';
 import {TabMenuModule} from 'primeng/tabmenu';
+import {ProgressBarModule} from 'primeng/progressbar';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -76,6 +77,7 @@ registerLocaleData(zh);
     MenubarModule,
     SidebarModule,
     FormsModule,
+    ProgressBarModule,
     BrowserAnimationsModule,
     OverlayPanelModule,
     HttpClientModule,

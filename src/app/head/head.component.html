@@ -14,12 +14,6 @@
 
 <p-sidebar [(visible)]="visibleSidebar2" position="right" [baseZIndex]="10000">
   <h4 [ngStyle]="{'font-weight':'normal'}">Welcome, {{uName}}</h4>
-  <!-- <ul class="sideHeader">
-    <li class="pt-2 pl-3 pr-1 pb-2"><label>My Cart</label> <span class="cartIcon"></span><pre>{{cartCount}}</pre></li>
-    <li class="pt-2 pl-3 pr-1 pb-2"><label>Add Item</label>  <span class="addItemIcon"></span> </li>
-    <li class="pt-2 pl-3 pr-1 pb-2"><label>About Me</label>  <span class="iIcon"></span></li>
-    <li class="pt-2 pl-3 pr-1 pb-2" (click)="logoutClk()"><label>Logout</label> <span class="logoutIcon"></span></li>
-</ul> -->
 
   <ul class="sideHeader list-group">
       <li class="pt-2 pl-3 pr-1 pb-2 list-group-item d-flex justify-content-between align-items-center" routerLink="/mycart/paint" (click)="visibleSidebar2 = false;">My Cart <span class="cartIcon badge badge-primary badge-pill"></span></li>
@@ -38,7 +32,6 @@
         <a href="#" rel='5' routerLink="/dashboard" (click)="visibleSidebar2 = false;"><span>Poetry</span></a>
         <a href="#" rel='2' routerLink="/dashboard" (click)="visibleSidebar2 = false;"><span>Other Art</span></a>
     </div>
-    <!-- <a href="#" rel='4'><span>react<sup>4</sup></span></a> -->
 </p-sidebar>
 <p-sidebar [(visible)]="visibleSidebar1" position="top" [baseZIndex]="10000" [showCloseIcon]='false'>
     <app-login (userClk)="userClkRes($event)"></app-login>

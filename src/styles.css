@@ -135,14 +135,17 @@ app-my-cart .ui-state-active{
     height: 100%;
 }
 app-login .ui-toast .ui-toast-message-content{
-    background: #540f15;
+    background: rgba(84, 15, 21, 0.57);
+    /* #540f15; */
 }
 app-painting .ui-toast .ui-toast-message-content{
-    background: #ffe399;
+    background: rgba(255, 227, 153, 0.59);
+    /* #ffe399; */
 }
 app-my-cart .ui-toast .ui-toast-message-content{
-    background: #3C8C3F;
-    color: #23212f;
+    background: rgba(60, 140, 63, 0.6);
+    /* #3C8C3F; */
+    color: #e2e1e1;
 }
 app-my-cart .ui-widget-header{
     background-color: rgba(171, 132, 58, 0.73);

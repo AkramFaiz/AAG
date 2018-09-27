@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ImageType } from '../../interface/image.interface';
 import { MessageService } from 'primeng/api';
 import { PaintServiceService } from '../../services/paint-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-paint-cart',
@@ -18,7 +19,7 @@ export class PaintCartComponent implements OnInit {
   clickCard = false;
   value: number;
   proFlag = false;
-  constructor(private paintS: PaintServiceService, private messageService: MessageService) { }
+  constructor(private paintS: PaintServiceService, private messageService: MessageService,private route: Router) { }
   ngOnInit() {
     this.paintS.getPaintList().subscribe( (res: ImageType[]) => { this.resItems = res;
       this.resItems.forEach(ele => {
@@ -34,6 +35,9 @@ export class PaintCartComponent implements OnInit {
     setTimeout( () => {
       this.proFlag = false;
       this.messageService.add({key: 'payment', severity: 'success', summary: 'Success', detail: 'Process Completed Successfully.'});
-    } , 15876000 );
+    } , 3000 );
+    setTimeout( ()=> {
+      this.route.navigate(['/'],{queryParams:{ payment: true }});
+    }, 7500);
   }
 }

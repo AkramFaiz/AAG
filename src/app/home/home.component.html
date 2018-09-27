@@ -1,10 +1,14 @@
 <section>
   <div class="internalDiv">
     <aside>
-      <div class="jumbotron mb-2" [@blurEffect]>
+      <div class="jumbotron mb-2" [@blurEffect] *ngIf="!paymentDone">
           <h1 class="display-4">Welcome to Akram's Art Gallery !!!</h1>
           <h2>A collage of various arts.</h2>
           <label> - We are not ourselves if we hide our talents.</label>
+        </div>
+        <div class="jumbotron mb-2" *ngIf="paymentDone">
+            <h1 class="display-4">Thank You For Shopping !!!</h1>
+            <label> Click below categories to continue shopping or Visit Again. </label>
         </div>
     </aside>
     <article>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, animate, transition, keyframes } from '@angular/animations';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -46,10 +47,19 @@ import { trigger, state, style, animate, transition, keyframes } from '@angular/
 
 export class HomeComponent implements OnInit {
   currentState: boolean;
-  constructor() { }
+  paymentDone = false;
+  param: any;
+  constructor(private actRoute: ActivatedRoute) { }
 
   ngOnInit() {
     this.currentState = true;
+    this.actRoute.queryParams.subscribe( params => {
+      this.param = params;
+    });
+    console.log(this.param);
+    if ( this.param.payment === 'true') {
+      this.paymentDone = true;
+    } else { this.paymentDone = false; }
   }
 
 }

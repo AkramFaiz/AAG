@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { MessageService } from 'primeng/api';
-import { BehaviorSubject } from 'rxjs';
+// import { BehaviorSubject } from 'rxjs';
 import { LoginService } from '../services/login.service';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
@@ -13,11 +13,12 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 export class LoginComponent implements OnInit {
   username: string;
   password: string;
-  private subjectVal = new BehaviorSubject<boolean>(false);
+  // private subjectVal = new BehaviorSubject<boolean>(false);
   data: any;
   data1: any;
+  resp: Array<string>;
   credData: any;
-  report: boolean;
+  report: any;
   @Output() userClk: EventEmitter<string> = new EventEmitter<string>();
   constructor(private messageService: MessageService, private loginReport: LoginService, private _http: HttpClient) {}
   addSingle() {
@@ -30,7 +31,7 @@ export class LoginComponent implements OnInit {
     this._http.get('/src/app/login/login.json').subscribe(
       data => {
         this.data1 = data as string [];	 // FILL THE ARRAY WITH DATA.
-        console.log(this.data1[0]);
+        console.log(this.data1);
       },
       (err: HttpErrorResponse) => {
         console.log (err.message);
@@ -43,25 +44,33 @@ export class LoginComponent implements OnInit {
       username: this.username,
       password: this.password
     };
-    this.report = this.loginReport.loginCall(this.credData, this.data1);
-    console.log(this.report);
-      if ( this.report === true ) {
+    this.loginReport.loginCall(this.credData, this.data1);
+    this.loginReport.loginSts.subscribe( res => { this.report = res; });
+    this.resp = this.report.split(',');
+      if ( this.resp[0] === 'true' && this.resp[1] === 'true' ) {
+          this.data = {
+            username: this.username,
+            type: 'login',
+            admin: true,
+          };
+      } else if (this.resp[0] === 'true' && this.resp[1] === 'false') {
         this.data = {
           username: this.username,
           type: 'login',
-          value: false
+          admin: false,
         };
-        this.userAction(this.data);
       } else {
         this.addSingle();
       }
+      this.userAction(this.data);
+      console.log(this.data);
   }
 
   cancelClk() {
     this.data = {
       username: 'Login',
       type: 'cancel',
-      value: false
+      admin: false
     };
     this.userAction(this.data);
   }

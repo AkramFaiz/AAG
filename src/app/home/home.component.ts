@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, DoCheck } from '@angular/core';
 import { trigger, state, style, animate, transition, keyframes } from '@angular/animations';
 import { ActivatedRoute } from '@angular/router';
 
@@ -45,7 +45,7 @@ import { ActivatedRoute } from '@angular/router';
   ]
 })
 
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, DoCheck {
   currentState: boolean;
   paymentDone = false;
   param: any;
@@ -55,11 +55,12 @@ export class HomeComponent implements OnInit {
     this.currentState = true;
     this.actRoute.queryParams.subscribe( params => {
       this.param = params;
+      console.log(this.param);
     });
-    console.log(this.param);
+  }
+  ngDoCheck() {
     if ( this.param.payment === 'true') {
       this.paymentDone = true;
     } else { this.paymentDone = false; }
   }
-
 }

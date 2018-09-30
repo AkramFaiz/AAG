@@ -19,7 +19,7 @@ export class PaintCartComponent implements OnInit {
   clickCard = false;
   value: number;
   proFlag = false;
-  constructor(private paintS: PaintServiceService, private messageService: MessageService,private route: Router) { }
+  constructor(private paintS: PaintServiceService, private messageService: MessageService, private route: Router) { }
   ngOnInit() {
     this.paintS.getPaintList().subscribe( (res: ImageType[]) => { this.resItems = res;
       this.resItems.forEach(ele => {
@@ -36,8 +36,9 @@ export class PaintCartComponent implements OnInit {
       this.proFlag = false;
       this.messageService.add({key: 'payment', severity: 'success', summary: 'Success', detail: 'Process Completed Successfully.'});
     } , 3000 );
-    setTimeout( ()=> {
-      this.route.navigate(['/'],{queryParams:{ payment: true }});
+    setTimeout( () => {
+      this.route.navigate(['/'], {queryParams: { payment: true }});
+      this.cardItems = [];
     }, 7500);
   }
 }

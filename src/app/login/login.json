@@ -3,4 +3,16 @@
     "username": "Admin",
     "password": "admin",
     "admin": true
+  },
+  {
+    "userId": "1235",
+    "username": "Akram Faiz",
+    "password": "!@#$",
+    "admin": false
+  },
+  {
+    "userId": "1135",
+    "username": "user",
+    "password": "user",
+    "admin": false
   }]

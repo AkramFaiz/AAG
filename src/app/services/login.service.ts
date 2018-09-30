@@ -8,7 +8,7 @@ import { EventEmitter } from 'events';
   providedIn: 'root'
 })
 export class LoginService implements OnInit {
-  private subjectVal = new BehaviorSubject<boolean>(false);
+  private subjectVal = new BehaviorSubject<any>(false);
   data: any;
   @Output() userClk: EventEmitter = new EventEmitter();
   loginData: LoginData[];
@@ -19,17 +19,15 @@ export class LoginService implements OnInit {
   ngOnInit() {
 
   }
-  loginCall(creds, res): boolean {
+  loginCall(creds, res) {
     if (res !== undefined) {
       for ( let s = 0; s < res.length; s++) {
         if ( res[s].username === creds.username && res[s].password === creds.password ) {
-          this.setLoginSts(true);
-          return true;
-        } else {
-          this.setLoginSts(false);
-          return false;
+          this.setLoginSts(true + ',' + res[s].admin);
         }
       }
+    } else {
+      this.setLoginSts(false);
     }
   }
   get loginSts() {

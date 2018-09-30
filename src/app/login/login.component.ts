@@ -1,6 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { MessageService } from 'primeng/api';
-// import { BehaviorSubject } from 'rxjs';
 import { LoginService } from '../services/login.service';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
@@ -13,7 +12,6 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 export class LoginComponent implements OnInit {
   username: string;
   password: string;
-  // private subjectVal = new BehaviorSubject<boolean>(false);
   data: any;
   data1: any;
   resp: Array<string>;
@@ -30,8 +28,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     this._http.get('/src/app/login/login.json').subscribe(
       data => {
-        this.data1 = data as string [];	 // FILL THE ARRAY WITH DATA.
-        console.log(this.data1);
+        this.data1 = data as string [];
       },
       (err: HttpErrorResponse) => {
         console.log (err.message);
@@ -63,7 +60,6 @@ export class LoginComponent implements OnInit {
         this.addSingle();
       }
       this.userAction(this.data);
-      console.log(this.data);
   }
 
   cancelClk() {

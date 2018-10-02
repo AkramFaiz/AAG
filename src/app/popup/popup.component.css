@@ -1,14 +1,60 @@
 
 /* Pop Up */
-p{
-    margin: 0;
-}
 ::ng-deep .vertical-center-modal {
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-
-  ::ng-deep .vertical-center-modal .ant-modal {
+}
+::ng-deep .vertical-center-modal .ant-modal {
     top: 0;
-  }
+}
+
+
+ul{
+    display: flex;
+    justify-content: flex-end;
+        align-items: stretch;
+}
+ul.desc{
+        align-items: default;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+ul li{
+    color: #e0995e;
+    justify-items: center;
+    height: 100%;
+    display: inherit;
+    margin: 10px;
+    padding: 20px;
+}
+p{
+    margin: 0;
+}
+ul li span{
+    width: 45px;
+    height: 25px;
+}
+.like{
+    background: url(../../assets/like.svg) no-repeat center;   
+    background-size: 25px 25px;
+}
+.unlike{
+    background: url(../../assets/unlike.svg) no-repeat center;   
+    background-size: 25px 25px;
+}
+.cartAdd{
+    background: url(../../assets/cart_fill.svg) no-repeat center;   
+    background-size: 32px 25px;
+}
+.cartRemove{
+    background: url(../../assets/cart_empty.svg) no-repeat center;   
+    background-size: 32px 25px;
+}
+#price{
+    background: url(../../assets/rupee.svg) no-repeat center;   
+    background-size: 100%;
+    width: 18px;
+    height: 18px;
+}

@@ -167,16 +167,21 @@ app-paint-cart > div aside,app-photo-cart > div aside{
     border-right: 1px solid  rgba(171, 132, 58, 0.36);
 }
 
-app-popup{
-    position: fixed;
-    top:0;
-    bottom:0;
-    left:0;
-    right:0;
-    width: 80%;
-    height: 80%;
-    margin: auto;
-    background: rgba(0, 0, 0, 0.7);
+/* popup */
+.ant-modal{
+    width: 80% !important;
+    height: 80% !important;
+    overflow: auto;
+    padding: 0;
+}
+.ant-modal-content{
+    background: #23212f;
+}
+.ant-modal-content .ant-modal-header,.ant-modal-close-x{
+    display: none;
+}
+.ant-modal-content .ant-modal-body{
+    padding: 0;
 }
 
 @media only screen and (max-width: 768px) {

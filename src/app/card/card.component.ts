@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { MessageService } from 'primeng/api';
 import { LoginService } from '../services/login.service';
 import { ImageType } from '../interface/image.interface';
+import { CurImageService } from '../services/cur-image.service';
 
 @Component({
   selector: 'app-card',
@@ -17,8 +18,8 @@ export class CardComponent implements OnInit {
   res: any;
   // list: Array<number> = [1, 2, 3];
   @Input() imageList;
-  @Output() singleImg: EventEmitter<string> = new EventEmitter<string>();
-  constructor(private messageService: MessageService, private loginS: LoginService) {
+  // @Output() singleImg: EventEmitter<string> = new EventEmitter<string>();
+  constructor(private messageService: MessageService, private loginS: LoginService, private imgS: CurImageService) {
   }
   cartSelected(sCart) {
     this.loginS.loginSts.subscribe(res => this.res = res);
@@ -46,6 +47,6 @@ export class CardComponent implements OnInit {
     // this.list.filter(e => this.list[0] === 1);
   }
   imgClk(e) {
-    this.singleImg.emit(e);
+    this.imgS.setCurImg(e);
   }
 }

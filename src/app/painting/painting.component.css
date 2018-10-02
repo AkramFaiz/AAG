@@ -94,6 +94,7 @@ div.ui-g{
     -webkit-animation-name: pulse;
     animation-name: pulse;
 }
+
 @media only screen and (max-width: 768px) {
     section>div{
         padding: 80px 5px 0 5px;

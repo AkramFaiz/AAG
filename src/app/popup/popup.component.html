@@ -1,2 +1,9 @@
-<img src="../../assets/paint/paint2.jpg" alt="img" />
-<img src="{{imageDetail.path}}" alt="image" />
+<nz-modal nzWrapClassName="vertical-center-modal" nzOkText="Ok"
+  nzCancelText="Close" [(nzVisible)]="isVisibleMiddle" 
+  nzTitle="Vertically centered modal dialog" (nzOnCancel)="handleCancelMiddle()" 
+  (nzOnOk)="handleOkMiddle()">
+    <p> <img width="100%" height="100%" [src]="imageDetail" alt="image" /> </p>
+    <p> <label for="comment">Comment</label> <textarea #comment name="comment" id="comment"></textarea>
+    <button nz-button nzType="primary" (click)="commentSubmit(comment)">Submit</button>
+    </p>
+  </nz-modal>

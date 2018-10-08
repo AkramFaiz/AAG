@@ -8,10 +8,8 @@
         <li [style.flex-direction]='column'> <span>Desc</span> </li>
         <li [style.flex-direction]='column'> <span>Info</span> </li>
     </ul>
-    <ul>
-        <li><span [ngClass]="{'like':likeFlag,'unlike':!likeFlag}" (click)="likeFlag = !likeFlag;"></span></li>
-        <li><span [ngClass]="{'cartAdd':cartAct,'cartRemove':!cartAct}" (click)="cartSelected(imageList);"></span></li>
-        <li><label for="comment">Comment</label> <textarea #comment name="comment" id="comment"></textarea></li>
-        <li><button nz-button nzType="primary" (click)="commentSubmit(comment)">Submit</button></li>
+    <ul class="flex-container">
+        <li id="comment"><label class="mr-2" for="comment">Comment</label> <textarea #comment name="comment" id="comment"></textarea><p class="ml-4" (click)="commentSubmit(comment)"></p></li>
+        <li><span [ngClass]="{'like':likeFlag,'unlike':!likeFlag}" (click)="likeFlag = !likeFlag;"></span><span [ngClass]="{'cartAdd':cartAct,'cartRemove':!cartAct}" (click)="cartSelected(imageList);"></span></li>
     </ul>
   </nz-modal>

@@ -12,11 +12,10 @@
 
 ul{
     display: flex;
-    justify-content: flex-end;
-        align-items: stretch;
+    align-items: stretch;
 }
 ul.desc{
-        align-items: default;
+    align-items: default;
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
@@ -58,3 +57,28 @@ ul li span{
     width: 18px;
     height: 18px;
 }
+#comment{
+    flex-basis: 80%;
+}
+textarea+p{
+    background: url(../../assets/enter.svg) no-repeat center;   
+    background-size: 100%;
+    width: 25px;
+    height: 25px;
+    justify-content: space-between;
+}
+@media only screen and (max-width: 768px) {
+    ul li{
+        margin: 5px;
+        padding: 0px;
+    }
+    #comment{
+        flex-basis: 80%;
+        
+    }
+}
+
+
+
+
+

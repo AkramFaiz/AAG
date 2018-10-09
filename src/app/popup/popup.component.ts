@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, DoCheck, AfterViewChecked} from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
 import { PopupStateService } from '../services/popup-state.service';
 import { CurImageService } from '../services/cur-image.service';
 import { MessageService } from 'primeng/api';
@@ -10,7 +10,7 @@ import { ImageType } from '../interface/image.interface';
   templateUrl: './popup.component.html',
   styleUrls: ['./popup.component.css']
 })
-export class PopupComponent implements OnInit , AfterViewChecked {
+export class PopupComponent implements OnInit {
   isVisibleMiddle = false;
   imageDetail: string;
 
@@ -19,6 +19,8 @@ export class PopupComponent implements OnInit , AfterViewChecked {
   cartAct = false;
   selCartList: ImageType[] = [];
   res: any;
+  currCmt = '';
+  cmtClk: boolean;
 
   constructor( private messageService: MessageService,
      private loginS: LoginService,
@@ -28,9 +30,9 @@ export class PopupComponent implements OnInit , AfterViewChecked {
     console.log('clicked ngAfterViewChecked', this.imageDetail);
     this.isVisibleMiddle = true;
   }
-  ngAfterViewChecked() {
+  // ngAfterViewChecked() {
 
-  }
+  // }
   handleOkMiddle(): void {
     console.log('click ok');
     this.isVisibleMiddle = false;
@@ -43,6 +45,7 @@ export class PopupComponent implements OnInit , AfterViewChecked {
   }
   commentSubmit(cmt) {
     console.log(cmt);
+    this.currCmt = cmt.value;
   }
   cartSelected(sCart) {
     this.loginS.loginSts.subscribe(res => this.res = res);
@@ -53,7 +56,7 @@ export class PopupComponent implements OnInit , AfterViewChecked {
       console.log(this.selCartList);
     } else {
       this.cartAct = false;
-    this.messageService.add({key: 'cart', severity: 'warn', summary: 'Not yet logged in.', detail: 'Login Required.'});
+      this.messageService.add({key: 'cart', severity: 'warn', summary: 'Not yet logged in.', detail: 'Login Required.'});
     }
   }
   clear() {

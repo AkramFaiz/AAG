@@ -4,12 +4,26 @@
   (nzOnOk)="handleOkMiddle()">
     <p> <img width="100%" height="100%" [src]="imageDetail" alt="image" /> </p>
     <ul class="desc">
-        <li [style.flex-direction]='column'> <h4>Title</h4></li>
-        <li [style.flex-direction]='column'> <span>Desc</span> </li>
-        <li [style.flex-direction]='column'> <span>Info</span> </li>
+        <li [style.flex-direction]='column'> <h4>Landscape Hill Painting</h4></li>
+        <li [style.flex-direction]='column'> <span>Nature created by god is a serene beauty. The huge landscapes filled with trees provide a healthy environement for the animals. To save earth we need to protect our forests and landscapes.</span> </li>
+        <li [style.flex-direction]='column'> <span class="mr-2 col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6"> Price: <pre id="price"></pre>35000 </span> <label class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">Dimentions: 30*40</label> </li>
     </ul>
     <ul class="flex-container">
-        <li id="comment"><label class="mr-2" for="comment">Comment</label> <textarea #comment name="comment" id="comment"></textarea><p class="ml-4" (click)="commentSubmit(comment)"></p></li>
-        <li><span [ngClass]="{'like':likeFlag,'unlike':!likeFlag}" (click)="likeFlag = !likeFlag;"></span><span [ngClass]="{'cartAdd':cartAct,'cartRemove':!cartAct}" (click)="cartSelected(imageList);"></span></li>
+        <li class="col-12 col-sm-12 col-md-9 col-lg-10 col-xl-10" *ngIf="!cmtClk">
+            <label class="pl-0 col-10 col-sm-10 col-md-3 col-lg-2 col-xl-2 text-right">Comment</label> 
+            <textarea class="col-10 col-sm-10 col-md-7 col-lg-8 col-xl-8" #comment name="comment">{{currCmt}}</textarea>
+            <p class="ml-2 pl-0 pr-0 col-2 col-sm-1 col-md-1 col-lg-1 col-xl-1" (click)="commentSubmit(comment);cmtClk=true;"></p>
+        </li>
+        <li class="col-12 col-sm-12 col-md-9 col-lg-10 col-xl-10" *ngIf="cmtClk">
+            <label class="pl-0 col-10 col-sm-10 col-md-3 col-lg-2 col-xl-2 text-right">Comment</label> 
+            <h6 class="mb-0 col-10 col-sm-10 col-md-7 col-lg-8 col-xl-8">{{currCmt}}</h6>
+            <p class="ml-2 pl-0 pr-0 col-2 col-sm-1 col-md-1 col-lg-1 col-xl-1" (click)="cmtClk=false;"></p>           
+        </li>
+        <li class="col-12 col-sm-12 col-md-3 col-lg-2 col-xl-2">
+            <span [ngClass]="{'like':likeFlag,'unlike':!likeFlag}" 
+            (click)="likeFlag = !likeFlag;"></span>
+            <span [ngClass]="{'cartAdd':cartAct,'cartRemove':!cartAct}" 
+            (click)="cartSelected(imageList);"></span>
+        </li>
     </ul>
   </nz-modal>

@@ -46,7 +46,7 @@ export class CardComponent implements OnInit {
   ngOnInit() {
     // this.list.filter(e => this.list[0] === 1);
   }
-  imgClk(e) {
+  imgClked(e) {
     this.imgS.setCurImg(e);
   }
 }

@@ -4,7 +4,9 @@ var _path = require('path');
 var _http = require('http');
 var app = express();
 var cors = require('cors');
-var api = require('./server/api');
+var api = require('/server/api');
+
+console.log(api);
 
 app.use(_bp.json());
 app.use(_bp.urlencoded({extended: false}));

@@ -4,26 +4,32 @@
   (nzOnOk)="handleOkMiddle()">
     <p> <img width="100%" height="100%" [src]="imageDetail" alt="image" /> </p>
     <ul class="desc">
-        <li [style.flex-direction]='column'> <h4>Landscape Hill Painting</h4></li>
-        <li [style.flex-direction]='column'> <span>Nature created by god is a serene beauty. The huge landscapes filled with trees provide a healthy environement for the animals. To save earth we need to protect our forests and landscapes.</span> </li>
-        <li [style.flex-direction]='column'> <span class="mr-2 col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6"> Price: <pre id="price"></pre>35000 </span> <label class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">Dimentions: 30*40</label> </li>
+        <!--  [style.flex-direction]='column' -->
+        <li > 
+            <h4 class="col-8 col-sm-8 col-md-8 col-lg-10 col-xl-10 pl-0 pr-0">Landscape Hill Painting</h4>
+            <div class="col-4 col-sm-4 col-md-4 col-lg-2 col-xl-2 pl-0 pr-0 text-right">
+                <span [ngClass]="{'like':likeFlag,'unlike':!likeFlag}" 
+                (click)="likeFlag = !likeFlag;likeClk(likeFlag)"></span>
+                <span [ngClass]="{'cartAdd':cartAct,'cartRemove':!cartAct}" 
+                (click)="cartSelected(imageList);"></span>
+            </div>
+        </li>
+        <li > <span>Nature created by god is a serene beauty. The huge landscapes filled with trees provide a healthy environement for the animals. To save earth we need to protect our forests and landscapes.</span> </li>
+        <li > <span class="mr-2 col-12 col-sm-6 pl-0 col-md-6 col-lg-6 col-xl-6"> Price: <pre id="price"></pre>35000 </span> <label class="col-12 pl-0 col-sm-6 col-md-6 col-lg-6 col-xl-6">Dimentions: 30*40</label> </li>
     </ul>
     <ul class="flex-container">
-        <li class="col-12 col-sm-12 col-md-9 col-lg-10 col-xl-10" *ngIf="!cmtClk">
-            <label class="pl-0 col-10 col-sm-10 col-md-3 col-lg-2 col-xl-2 text-right">Comment</label> 
-            <textarea class="col-10 col-sm-10 col-md-7 col-lg-8 col-xl-8" #comment name="comment">{{currCmt}}</textarea>
-            <p class="ml-2 pl-0 pr-0 col-2 col-sm-1 col-md-1 col-lg-1 col-xl-1" (click)="commentSubmit(comment);cmtClk=true;"></p>
+        <li class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" *ngIf="!cmtClk">
+            <label class="pl-0 col-12 mr-2">Comment</label> 
+            <textarea class="col-8 col-md-9 col-sm-10 col-lg-10 col-xl-10" #comment name="comment">{{currCmt}}</textarea>
+            <p class="ml-2 pl-0 pr-0 col-2 col-sm-1 col-md-1 col-lg-1 col-xl-1" (click)="commentSubmit(comment)"></p>
+            <p class="ml-2 pl-0 pr-0 col-2 col-sm-1 col-md-1 col-lg-1 col-xl-1 comment__delIcon" *ngIf="cmtClk" (click)="cmtClk=false;"></p>   
         </li>
-        <li class="col-12 col-sm-12 col-md-9 col-lg-10 col-xl-10" *ngIf="cmtClk">
-            <label class="pl-0 col-10 col-sm-10 col-md-3 col-lg-2 col-xl-2 text-right">Comment</label> 
-            <h6 class="mb-0 col-10 col-sm-10 col-md-7 col-lg-8 col-xl-8">{{currCmt}}</h6>
-            <p class="ml-2 pl-0 pr-0 col-2 col-sm-1 col-md-1 col-lg-1 col-xl-1" (click)="cmtClk=false;"></p>           
-        </li>
-        <li class="col-12 col-sm-12 col-md-3 col-lg-2 col-xl-2">
-            <span [ngClass]="{'like':likeFlag,'unlike':!likeFlag}" 
-            (click)="likeFlag = !likeFlag;"></span>
-            <span [ngClass]="{'cartAdd':cartAct,'cartRemove':!cartAct}" 
-            (click)="cartSelected(imageList);"></span>
+        <li class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" *ngIf="cmtClk">
+            <label class="pl-0 col-12 mr-2">Comment</label> 
+            <!-- <h6 class="mb-0 col-10 col-sm-11 col-md-11 col-lg-11 col-xl-11">{{currCmt}}</h6> -->
+            <em class="mb-0 col-8 col-md-9 col-sm-10 col-lg-10 col-xl-10">{{currCmt}}</em>
+            <p class="ml-2 pl-0 pr-0 col-2 col-sm-1 col-md-1 col-lg-1 col-xl-1 " (click)="cmtClk=false;"></p>   
+            <p class="ml-2 pl-0 pr-0 col-2 col-sm-1 col-md-1 col-lg-1 col-xl-1 comment__delIcon" (click)="deleteComment();cmtClk=false;"></p>   
         </li>
     </ul>
   </nz-modal>

@@ -18,7 +18,8 @@ ul li{
     height: 100%;
     padding: 10px;
 }
-ul li,#price,textarea,textarea+p,h6,h6+p,ul.flex-container li span,ul.flex-container li label{
+ul li,#price,textarea,textarea+p,em,em+p,p.comment__delIcon,
+ul.desc li:first-child span,ul.desc li:first-child label{
     vertical-align: middle;
     display: inline-block;
 }
@@ -34,8 +35,8 @@ ul.desc li{
 p{
     margin: 0;
 }
-ul.flex-container li span{
-    width: 45px;
+ul.desc li:first-child span{
+    width: 40px;
     height: 25px;
 }
 
@@ -62,7 +63,7 @@ ul.flex-container li span{
     height: 18px;
     margin: 0;
 }
-textarea,h6{
+textarea,em{
     background: rgba(104, 103, 107, 0.1);
     border: 1px solid rgba(224, 153, 94, 0.25);
 }
@@ -72,26 +73,35 @@ textarea+p{
     width: 30px;
     height: 25px;
 }
-h6{
+em{
     padding: 10px;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0px 0px 3px rgba(224, 153, 94, 0.5);
 }
-h6+p{
+em+p{
     background: url(../../assets/edit_icon.svg) no-repeat center;   
     background-size: 25px 25px;
     width: 30px;
     height: 25px;
 }
+p.comment__delIcon{
+    background: url(../../assets/delIcon.svg) no-repeat center;   
+    background-size: 22px 22px;
+    width: 22px;
+    height: 22px;   
+}
 @media only screen and (max-width: 768px) {
     ul li{
         margin: 0px;
     }
-    ul.flex-container li,ul.desc li:last-child{
+    ul.desc li:last-child{
         display: inline-block;
         vertical-align: middle;
     }
-    label.text-right{
+    /* label.text-right{
         text-align: left !important;
-    }
+    } */
 }
 
 

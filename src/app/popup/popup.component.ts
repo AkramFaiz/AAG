@@ -45,9 +45,24 @@ export class PopupComponent implements OnInit {
   }
   commentSubmit(cmt) {
     console.log(cmt);
-    this.currCmt = cmt.value;
+    if (cmt.value === '') {
+      this.cmtClk = false;
+      this.messageService.add({
+        key: 'comment',
+        severity: 'warn',
+        summary: 'Comments cannot be empty.',
+        detail: 'Comments cannot be empty.'});
+      } else {
+        this.cmtClk = true;
+        this.currCmt = cmt.value;
+      }
+  }
+  deleteComment() {
+    console.log('delCmt');
+    this.currCmt = '';
   }
   cartSelected(sCart) {
+    console.log(sCart);
     this.loginS.loginSts.subscribe(res => this.res = res);
     console.log('lSts: ', this.res);
     if ( this.res === true ) {
@@ -63,6 +78,7 @@ export class PopupComponent implements OnInit {
       this.messageService.clear();
   }
   likeClk(ee) {
+    console.log(ee);
     // if (ee.target.className === 'unlike') {
     //   return this.imageList.likeCount++;
     // } else {

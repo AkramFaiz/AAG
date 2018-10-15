@@ -2,6 +2,7 @@ import { Injectable, OnInit, Output } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { LoginData } from '../interface/loginData.interface';
 import { Observable, BehaviorSubject } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { EventEmitter } from 'events';
 
 @Injectable({
@@ -17,7 +18,9 @@ export class LoginService implements OnInit {
   constructor(private _http: HttpClient) { }
 
   ngOnInit() {
-
+    this._http.get('/login').subscribe(res => this.result = res);
+    console.log(this.result);
+    // return this._http.get('/login').map(result => this.result = result.json());
   }
   loginCall(creds, res) {
     if (res !== undefined) {

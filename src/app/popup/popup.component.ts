@@ -19,6 +19,7 @@ export class PopupComponent implements OnInit {
   cartAct = false;
   selCartList: ImageType[] = [];
   res: any;
+  resp: boolean;
   currCmt = '';
   cmtClk: boolean;
 
@@ -61,17 +62,25 @@ export class PopupComponent implements OnInit {
     console.log('delCmt');
     this.currCmt = '';
   }
-  cartSelected(sCart) {
-    console.log(sCart);
+  cartSelected(sCart, ele) {
     this.loginS.loginSts.subscribe(res => this.res = res);
     console.log('lSts: ', this.res);
-    if ( this.res === true ) {
+    if (this.res !== false) {
+      this.resp = JSON.parse(this.res.split(',')[0]);
+    }
+    // tslint:disable-next-line:triple-equals
+    if ( this.resp === true ) {
       this.cartAct = !this.cartAct;
-      this.selCartList.push(sCart);
+       if ( ele.className === 'cartRemove') {
+        this.selCartList.push(sCart);
+       } else if ( ele.className === 'cartAdd') {
+        this.selCartList.pop();
+       }
       console.log(this.selCartList);
     } else {
       this.cartAct = false;
-      this.messageService.add({key: 'cart', severity: 'warn', summary: 'Not yet logged in.', detail: 'Login Required.'});
+      this.messageService.add({key: 'cart', severity: 'warn',
+      summary: 'Not yet logged in.', detail: 'Login Required.'});
     }
   }
   clear() {
@@ -79,6 +88,8 @@ export class PopupComponent implements OnInit {
   }
   likeClk(ee) {
     console.log(ee);
+    // backend service call to store the count
+
     // if (ee.target.className === 'unlike') {
     //   return this.imageList.likeCount++;
     // } else {

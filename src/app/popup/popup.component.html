@@ -2,20 +2,20 @@
   nzCancelText="Close" [(nzVisible)]="isVisibleMiddle" 
   nzTitle="Vertically centered modal dialog" (nzOnCancel)="handleCancelMiddle()" 
   (nzOnOk)="handleOkMiddle()">
-    <p> <img width="100%" height="100%" [src]="imageDetail" alt="image" /> </p>
+    <p> <img width="100%" height="100%" [src]="imageDetail.path" alt="image" /> </p>
     <ul class="desc">
         <!--  [style.flex-direction]='column' -->
         <li > 
-            <h4 class="col-8 col-sm-8 col-md-8 col-lg-10 col-xl-10 pl-0 pr-0">Landscape Hill Painting</h4>
+            <h4 class="col-8 col-sm-8 col-md-8 col-lg-10 col-xl-10 pl-0 pr-0">{{imageDetail.title}}</h4>
             <div class="col-4 col-sm-4 col-md-4 col-lg-2 col-xl-2 pl-0 pr-0 text-right">
                 <span [ngClass]="{'like':likeFlag,'unlike':!likeFlag}" 
                 (click)="likeFlag = !likeFlag;likeClk(likeFlag)"></span>
-                <span [ngClass]="{'cartAdd':cartAct,'cartRemove':!cartAct}" 
-                (click)="cartSelected(imageList);"></span>
+                <span #cart1 [ngClass]="{'cartAdd':cartAct,'cartRemove':!cartAct}" 
+                (click)="cartSelected(imageList,cart1);"></span>
             </div>
         </li>
-        <li > <span>Nature created by god is a serene beauty. The huge landscapes filled with trees provide a healthy environement for the animals. To save earth we need to protect our forests and landscapes.</span> </li>
-        <li > <span class="mr-2 col-12 col-sm-6 pl-0 col-md-6 col-lg-6 col-xl-6"> Price: <pre id="price"></pre>35000 </span> <label class="col-12 pl-0 col-sm-6 col-md-6 col-lg-6 col-xl-6">Dimentions: 30*40</label> </li>
+        <li > <span>{{imageDetail.desc}}</span> </li>
+        <li > <span class="mr-2 col-12 col-sm-6 pl-0 col-md-6 col-lg-6 col-xl-6"> Price: <pre id="price"></pre> {{imageDetail.cost}} </span> <label class="col-12 pl-0 col-sm-6 col-md-6 col-lg-6 col-xl-6">Dimentions: {{imageDetail.dimentions}}</label> </li>
     </ul>
     <ul class="flex-container">
         <li class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" *ngIf="!cmtClk">

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ImageType } from './../interface/image.interface';
 import { PaintServiceService } from '../services/paint-service.service';
-import { PopupStateService } from '../services/popup-state.service';
 
 @Component({
   selector: 'app-painting',
@@ -16,22 +15,13 @@ export class PaintingComponent implements OnInit {
   curKeyVal = 'cost';
   singleValue: any;
   rangeValue: any;
-  detailViewFlag: boolean;
 
-  constructor(private paintS: PaintServiceService, private popS: PopupStateService) {
+  constructor(private paintS: PaintServiceService) {
   }
   ngOnInit() {
       this.paintS.getPaintList().subscribe( (res: ImageType[]) => { this.images = res; });
   }
-  popUpClk() {
-    this.popS.popSetState(true);
-    this.popS.popGetState.subscribe( res => { this.detailViewFlag = res;
-      console.log(res);
-    });
-  }
   onAfterChange(value) {
     console.log(`onAfterChange: ${value}`);
   }
-
-
 }

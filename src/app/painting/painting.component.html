@@ -2,7 +2,9 @@
   <div class="internalDiv">
         <div class="rangeDiv">
             <ul>
-                <li class="d-flex d-sm-inline-flex d-md-inline-flex d-lg-inline-flex d-xl-inline-flex"><label>Price Range: </label></li>                
+                <li class="d-flex d-sm-inline-flex d-md-inline-flex d-lg-inline-flex d-xl-inline-flex">
+                    <label>Price Range: </label>
+                </li>                
                 <li [ngStyle]="{'width':'195px','position':'relative'}">                                    
                       <nz-slider
                         #ranger
@@ -18,11 +20,12 @@
                 <li>  <label class="like" (click)="orderCode = -1; curKeyVal ='likeCount'"></label>  </li>  
             </ul>           
         </div>
-        <div class="col-xs-12 col-sm-6 col-md-5 col-lg-3 ml-0 mr-0 mb-4 mt-0 cardDiv animated pulse" *ngFor="let image of images | price: ranger?.value | orderBy: {curKey: curKeyVal, orderCode: orderCode}">
-            <app-card [imageList]="image" (click)="popUpClk();"></app-card>
+        <div class="col-xs-12 col-sm-6 col-md-5 col-lg-3 ml-0 mr-0 mb-4 mt-0 cardDiv animated pulse" 
+        *ngFor="let image of images | price: ranger?.value | orderBy: {curKey: curKeyVal, orderCode: orderCode}">
+            <app-card [imageList]="image"></app-card>
         </div>
     <p-toast position="top-right" key="cart"></p-toast>
   </div>
 </section>
-<app-popup *ngIf="detailViewFlag"></app-popup>
+
 <!-- [imageDetail]="singleImgVal" (singleImg)="curImage($event);" -->

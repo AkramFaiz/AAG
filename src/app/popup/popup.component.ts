@@ -88,9 +88,9 @@ export class PopupComponent implements OnInit {
       this.messageService.clear();
   }
   likeClk(ee) {
-    console.log(ee);
+    console.log(ee.className);
     // backend service call to store the count
-    if (ee.target.className === 'unlike') {
+    if (ee.className === 'unlike') {
       this.imageDetail.likeCount++;
       this.imageDetail.liked = true;
       // this.updateData(this.imageDetail);

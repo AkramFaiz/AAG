@@ -8,8 +8,8 @@
         <li > 
             <h4 class="col-8 col-sm-8 col-md-8 col-lg-10 col-xl-10 pl-0 pr-0">{{imageDetail.title}}</h4>
             <div class="col-4 col-sm-4 col-md-4 col-lg-2 col-xl-2 pl-0 pr-0 text-right">
-                <span [ngClass]="{'like':likeFlag,'unlike':!likeFlag}" 
-                (click)="likeFlag = !likeFlag;likeClk(likeFlag)"></span>
+                <span #like [ngClass]="{'like':likeFlag,'unlike':!likeFlag}" 
+                (click)="likeFlag = !likeFlag;likeClk(like)"></span>
                 <span #cart1 [ngClass]="{'cartAdd':cartAct,'cartRemove':!cartAct}" 
                 (click)="cartSelected(imageList,cart1);"></span>
             </div>

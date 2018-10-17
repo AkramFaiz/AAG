@@ -21,6 +21,7 @@ export class CardComponent implements OnInit {
   detailViewFlag: boolean;
   cartAddTrue: boolean;
   likedTrue: boolean;
+  updatedImg: boolean;
   // list: Array<number> = [1, 2, 3];
   @Input() imageList;
   // @Output() singleImg: EventEmitter<string> = new EventEmitter<string>();
@@ -29,7 +30,7 @@ export class CardComponent implements OnInit {
     private imgS: CurImageService) {
   }
   ngOnInit() {
-    // this.list.filter(e => this.list[0] === 1);
+    this.updatedImg = false;
     // Add2Cart
       if (this.imageList.addedToCart === true) {
         this.cartAct = true;
@@ -77,6 +78,7 @@ export class CardComponent implements OnInit {
     }
   }
   updateData(imgList) {
+    this.updatedImg = true;
     this.imgS.setCurImg(imgList);
   }
   imgClked() {
@@ -84,5 +86,8 @@ export class CardComponent implements OnInit {
     this.popS.popGetState.subscribe( res => { this.detailViewFlag = res;
       console.log('imgClk', res);
     });
+    if (this.updatedImg === false) {
+      this.imgS.setCurImg(this.imageList);
+    }
   }
 }

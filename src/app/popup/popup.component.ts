@@ -12,7 +12,7 @@ import { ImageType } from '../interface/image.interface';
 })
 export class PopupComponent implements OnInit {
   isVisibleMiddle = false;
-  imageDetail: string;
+  imageDetail: ImageType;
 
   likeCount = 0;
   likeFlag = false;
@@ -29,6 +29,7 @@ export class PopupComponent implements OnInit {
   ngOnInit() {
     this.imageDetail = this.imgS.curImg;
     console.log('clicked ngAfterViewChecked', this.imageDetail);
+    this.likeFlag = this.imageDetail.liked;
     this.isVisibleMiddle = true;
   }
   // ngAfterViewChecked() {
@@ -89,11 +90,19 @@ export class PopupComponent implements OnInit {
   likeClk(ee) {
     console.log(ee);
     // backend service call to store the count
-
-    // if (ee.target.className === 'unlike') {
-    //   return this.imageList.likeCount++;
-    // } else {
-    //   return this.imageList.likeCount--;
-    // }
+    if (ee.target.className === 'unlike') {
+      this.imageDetail.likeCount++;
+      this.imageDetail.liked = true;
+      // this.updateData(this.imageDetail);
+      return this.imageDetail.likeCount;
+    } else {
+      this.imageDetail.likeCount--;
+      this.imageDetail.liked = false;
+      // this.updateData(this.imageDetail);
+      return this.imageDetail.likeCount;
+    }
   }
+  // updateData(fnlImg) {
+  //   this.imgS.setCurImg(fnlImg);
+  // }
 }

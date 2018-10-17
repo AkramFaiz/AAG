@@ -2,7 +2,7 @@
     {
       "id" : 1,
       "path": "../assets/paint/paint1.jpg",
-      "cost": 85000,
+      "cost": 85500,
       "width": "100%",
       "liked": true,
       "likeCount": 1111,

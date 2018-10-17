@@ -65,16 +65,24 @@ export class CardComponent implements OnInit {
   }
   likeClk(ee) {
     if (ee.target.className === 'unlike') {
-      return this.imageList.likeCount++;
+      this.imageList.likeCount++;
+      this.imageList.liked = true;
+      this.updateData(this.imageList);
+      return this.imageList.likeCount;
     } else {
-      return this.imageList.likeCount--;
+      this.imageList.likeCount--;
+      this.imageList.liked = false;
+      this.updateData(this.imageList);
+      return this.imageList.likeCount;
     }
   }
-  imgClked(img) {
+  updateData(imgList) {
+    this.imgS.setCurImg(imgList);
+  }
+  imgClked() {
     this.popS.popSetState(true);
     this.popS.popGetState.subscribe( res => { this.detailViewFlag = res;
-      console.log(res);
+      console.log('imgClk', res);
     });
-    this.imgS.setCurImg(img);
   }
 }

@@ -25,8 +25,6 @@ const routes: Routes = [
     { path: 'aboutme', component: AboutMeComponent, },
     { path: 'photography', component: PhotographyComponent },
     { path: 'painting', component: PaintingComponent, },
-    { path: 'painting', component: PaintingComponent, },
-    { path: 'painting', component: PaintingComponent, },
     { path: '**', redirectTo: 'home', pathMatch: 'full' }
 ];
 @NgModule({

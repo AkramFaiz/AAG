@@ -6,4 +6,7 @@ export interface ImageType {
     liked: boolean;
     addedToCart: boolean;
     likeCount: number;
+    title: string;
+    desc: string;
+    dimentions: string;
 }

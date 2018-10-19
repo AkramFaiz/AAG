@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./photo-cart.component.css']
 })
 export class PhotoCartComponent implements OnInit {
-
+  cardItems: any;
   constructor() { }
 
   ngOnInit() {
+    this.cardItems = {};
   }
 
 }

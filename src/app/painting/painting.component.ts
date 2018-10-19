@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges, DoCheck } from '@angular/core';
 import { ImageType } from './../interface/image.interface';
 import { PaintServiceService } from '../services/paint-service.service';
+import { CurImageService } from '../services/cur-image.service';
 
 @Component({
   selector: 'app-painting',
@@ -16,12 +17,13 @@ export class PaintingComponent implements OnInit {
   singleValue: any;
   rangeValue: any;
 
-  constructor(private paintS: PaintServiceService) {
+  constructor(private paintS: PaintServiceService, private imgS: CurImageService ) {
+    console.log('const');
   }
   ngOnInit() {
       this.paintS.getPaintList().subscribe( (res: ImageType[]) => { this.images = res; });
   }
   onAfterChange(value) {
-    console.log(`onAfterChange: ${value}`);
+      console.log(`onAfterChange: ${value}`);
   }
 }

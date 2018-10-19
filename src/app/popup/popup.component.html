@@ -11,7 +11,7 @@
                 <span #like [ngClass]="{'like':likeFlag,'unlike':!likeFlag}" 
                 (click)="likeFlag = !likeFlag;likeClk(like)"></span>
                 <span #cart1 [ngClass]="{'cartAdd':cartAct,'cartRemove':!cartAct}" 
-                (click)="cartSelected(imageList,cart1);"></span>
+                (click)="cartSelected(imageDetail,cart1);"></span>
             </div>
         </li>
         <li > <span>{{imageDetail.desc}}</span> </li>

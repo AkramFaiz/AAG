@@ -6,8 +6,6 @@ var app = express();
 var cors = require('cors');
 var api = require('./server/api');
 
-console.log(api);
-
 app.use(_bp.json());
 app.use(_bp.urlencoded({extended: false}));
 app.use(express.static(_path.join(__dirname,'dist')));
@@ -26,7 +24,7 @@ app.get('*'),(req,res) => {
     res.sendFile(_path.join(__dirname,'dist/index.html'));
 }
 
-var port = process.env.PORT || '3000';
+var port = process.env.PORT || '1111';
 app.set('port',port);
 
 var server = _http.createServer(app);

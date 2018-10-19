@@ -27,7 +27,7 @@ export class PopupComponent implements OnInit {
      private loginS: LoginService,
      private popS: PopupStateService, private imgS: CurImageService) { }
   ngOnInit() {
-    this.imageDetail = this.imgS.curImg;
+    this.imgS.curImg.subscribe( res => this.imageDetail = res);
     console.log('clicked ngAfterViewChecked', this.imageDetail);
     this.likeFlag = this.imageDetail.liked;
     this.isVisibleMiddle = true;
@@ -93,16 +93,16 @@ export class PopupComponent implements OnInit {
     if (ee.className === 'unlike') {
       this.imageDetail.likeCount++;
       this.imageDetail.liked = true;
-      // this.updateData(this.imageDetail);
+      this.updateData(this.imageDetail);
       return this.imageDetail.likeCount;
     } else {
       this.imageDetail.likeCount--;
       this.imageDetail.liked = false;
-      // this.updateData(this.imageDetail);
+      this.updateData(this.imageDetail);
       return this.imageDetail.likeCount;
     }
   }
-  // updateData(fnlImg) {
-  //   this.imgS.setCurImg(fnlImg);
-  // }
+  updateData(fnlImg) {
+    this.imgS.setCurImg(fnlImg);
+  }
 }

@@ -36,8 +36,8 @@ export class LoginService implements OnInit {
   get loginSts() {
     return this.subjectVal.asObservable();
   }
-  setLoginSts(subjectVal: any) {
-    console.log('Set logged in called ' + subjectVal);
-    this.subjectVal.next(subjectVal);
+  setLoginSts(subVal: any) {
+    console.log('Set logged in called ' + subVal);
+    this.subjectVal.next(subVal);
   }
 }

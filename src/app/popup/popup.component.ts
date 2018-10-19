@@ -30,6 +30,7 @@ export class PopupComponent implements OnInit {
     this.imgS.curImg.subscribe( res => this.imageDetail = res);
     console.log('clicked ngAfterViewChecked', this.imageDetail);
     this.likeFlag = this.imageDetail.liked;
+    this.cartAct = this.imageDetail.addedToCart;
     this.isVisibleMiddle = true;
   }
   // ngAfterViewChecked() {

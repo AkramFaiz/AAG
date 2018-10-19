@@ -50,8 +50,12 @@ export class CardComponent implements OnInit {
     if ( this.resp === true ) {
       this.cartAct = !this.cartAct;
        if ( ele.className === 'cartRemove') {
+        this.imageList.addedToCart = true;
+        this.updateData(this.imageList);
         this.selCartList.push(sCart);
        } else if ( ele.className === 'cartAdd') {
+        this.imageList.addedToCart = false;
+        this.updateData(this.imageList);
         this.selCartList.pop();
        }
       console.log(this.selCartList);
@@ -87,6 +91,7 @@ export class CardComponent implements OnInit {
       console.log('imgClk', res);
     });
     if (this.updatedImg === false) {
+      console.log('imgClk-noupdate');
       this.imgS.setCurImg(this.imageList);
     }
   }

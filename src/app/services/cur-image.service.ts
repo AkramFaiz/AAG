@@ -6,10 +6,11 @@ import { BehaviorSubject, Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class CurImageService {
-  private imgVal: any = new Subject<any>();
+  private imgVal: any = new BehaviorSubject<any>('');
   constructor() { }
 
   get curImg() {
+    console.log(this.imgVal);
     return this.imgVal.asObservable();
   }
   setCurImg( val: ImageType ) {

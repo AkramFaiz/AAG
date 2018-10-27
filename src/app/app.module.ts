@@ -46,6 +46,11 @@ import { OrderByPipe } from './pipes/orderBy/order-by.pipe';
 import { FooterComponent } from './footer/footer.component';
 import { PaintCartComponent } from './my-cart/paint-cart/paint-cart.component';
 import { PhotoCartComponent } from './my-cart/photo-cart/photo-cart.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
+import { CatergoryCardComponent } from './photography/catergory-card/catergory-card.component';
+import { PhotoDetailViewComponent } from './photography/photo-detail-view/photo-detail-view.component';
+import { SelectedCategoryComponent } from './photography/selected-category/selected-category.component';
 
 registerLocaleData(zh);
 
@@ -67,7 +72,10 @@ registerLocaleData(zh);
     OrderByPipe,
     FooterComponent,
     PaintCartComponent,
-    PhotoCartComponent
+    PhotoCartComponent,
+    CatergoryCardComponent,
+    PhotoDetailViewComponent,
+    SelectedCategoryComponent
   ],
   imports: [
     BrowserModule,
@@ -87,7 +95,8 @@ registerLocaleData(zh);
     PaginatorModule,
     AppRoutingModule,
     TabMenuModule,
-    NgZorroAntdModule
+    NgZorroAntdModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [MessageService, { provide: NZ_I18N, useValue: zh_CN }],
   bootstrap: [AppComponent]

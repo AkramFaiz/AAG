@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Categories } from '../interface/categories.interface';
+import { PhotoCategoryService } from '../services/photo-category.service';
 
 @Component({
   selector: 'app-photography',
@@ -6,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./photography.component.css']
 })
 export class PhotographyComponent implements OnInit {
+  categories: Categories[];
 
-  constructor() { }
+  constructor(private photoCatSer: PhotoCategoryService) { }
 
   ngOnInit() {
+      this.photoCatSer.getCategories().subscribe(res => this.categories = res);
   }
 
 }

@@ -1,0 +1,35 @@
+img{
+    width: 100%;
+    height: 200px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+}
+p{
+    position: absolute;
+    bottom: 30px;
+    margin: 0;
+    right: 15px;
+    background: rgba(0,0,0,0.5);
+    color: #ab843a;
+    padding: 5px 15px;
+    text-align: center;
+    border-bottom-right-radius: 5px;
+}
+label{
+    position: absolute;
+    top: 5px;
+    right: 20px;
+    width: 25pX;
+    height: 25px;
+    margin: 0;
+    border: 1px solid #ab843a70;
+    border-radius: 100%;
+}
+.favAct{
+    background: url(../../../assets/fav.svg) no-repeat center rgba(0,0,0,0.8);   
+    background-size: 18px;
+}
+.favInact{
+    background: url(../../../assets/favNo.svg) no-repeat center rgba(0,0,0,0.8);   
+    background-size: 18px;
+}

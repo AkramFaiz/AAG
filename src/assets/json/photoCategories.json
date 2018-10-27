@@ -1,0 +1,76 @@
+[
+    {
+      "image": "../assets/photoCategory/nature.png",
+      "title": "Natura",
+      "favourite" : true
+    },
+    {
+        "image": "../assets/photoCategory/leaves.jpg",
+        "title": "Leaves",
+        "favourite" : false
+    }
+    ,
+    {
+        "image": "../assets/paint/paint1.jpg",
+        "title": "Aves",
+        "favourite" : false
+    }
+    ,
+    {
+        "image": "../assets/paint/paint1.jpg",
+        "title": "Beyond Life",
+        "favourite" : false
+    }
+    ,
+    {
+        "image": "../assets/paint/paint1.jpg",
+        "title": "Insectum",
+        "favourite" : false
+    }
+    ,
+    {
+        "image": "../assets/paint/paint1.jpg",
+        "title": "Populus",
+        "favourite" : false
+    },
+    {
+        "image": "../assets/paint/paint1.jpg",
+        "title": "Metazoa",
+        "favourite" : false
+    },
+    {
+        "image": "../assets/paint/paint1.jpg",
+        "title": "Workaholic",
+        "favourite" : false
+    },
+    {
+        "image": "../assets/paint/paint1.jpg",
+        "title": "Aquae",
+        "favourite" : false
+    },
+    {
+        "image": "../assets/paint/paint1.jpg",
+        "title": "Floral",
+        "favourite" : false
+    },
+    {
+        "image": "../assets/paint/paint1.jpg",
+        "title": "Night Life",
+        "favourite" : false
+    },
+    {
+        "image": "../assets/paint/paint1.jpg",
+        "title": "Amicus and Amicae",
+        "favourite" : false
+    },
+    {
+        "image": "../assets/paint/paint1.jpg",
+        "title": "Bokeh",
+        "favourite" : false
+    },
+    {
+        "image": "../assets/paint/paint1.jpg",
+        "title": "Landscape",
+        "favourite" : false
+    }
+]

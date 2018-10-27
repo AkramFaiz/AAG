@@ -1,0 +1,3 @@
+  <img [src]="catergoryData.image" alt="img" (click)="catergoryClick(catergoryData.title)">
+  <p>{{catergoryData.title}}</p>
+  <label [ngClass]="{'favAct':favFlag,'favInact':!favFlag}" (click)="favFlag = !favFlag;"></label>

@@ -1,4 +1,6 @@
-section{
-    background: url(../../assets/paint_bg.jpg) no-repeat center;
-    background-size: cover;
+ul li{
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    cursor: pointer;
 }

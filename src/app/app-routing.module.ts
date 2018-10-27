@@ -10,6 +10,8 @@ import { MyCartComponent } from './my-cart/my-cart.component';
 import { AboutMeComponent } from './about-me/about-me.component';
 import { PaintCartComponent } from './my-cart/paint-cart/paint-cart.component';
 import { PhotoCartComponent } from './my-cart/photo-cart/photo-cart.component';
+import { PhotoDetailViewComponent } from './photography/photo-detail-view/photo-detail-view.component';
+import { SelectedCategoryComponent } from './photography/selected-category/selected-category.component';
 
 const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -24,6 +26,8 @@ const routes: Routes = [
     },
     { path: 'aboutme', component: AboutMeComponent, },
     { path: 'photography', component: PhotographyComponent },
+    { path: 'selectedCat', component: SelectedCategoryComponent },
+    { path: 'photoDetailView', component: PhotoDetailViewComponent },
     { path: 'painting', component: PaintingComponent, },
     { path: '**', redirectTo: 'home', pathMatch: 'full' }
 ];

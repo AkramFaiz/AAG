@@ -4,6 +4,7 @@ import { LoginService } from '../services/login.service';
 import { ImageType } from '../interface/image.interface';
 import { CurImageService } from '../services/cur-image.service';
 import { PopupStateService } from '../services/popup-state.service';
+import { PaintServiceService } from '../services/paint-service.service';
 
 @Component({
   selector: 'app-card',
@@ -27,7 +28,7 @@ export class CardComponent implements OnInit {
   // @Output() singleImg: EventEmitter<string> = new EventEmitter<string>();
   constructor(private messageService: MessageService,
     private loginS: LoginService, private popS: PopupStateService,
-    private imgS: CurImageService) {
+    private imgS: CurImageService, private paintS: PaintServiceService) {
   }
   ngOnInit() {
     this.updatedImg = false;

@@ -14,9 +14,9 @@ var sendErr = (err,res)=>{
     res.status(501).json(response);
 }
 
-//  user
+//  login
 router.get('/login',(req, res, next) => {
-    db.user.find(function (err, docs) {
+    db.login.find(function (err, docs) {
         console.log(docs);
         res.json(docs);
     });
@@ -24,11 +24,29 @@ router.get('/login',(req, res, next) => {
 router.post('/login',(req, res, next) => {
 var newObj = req.body;
 
-db.user.insert(newObj, function(err, doc) {
+db.login.insert(newObj, function(err, doc) {
    if (err) throw err;
    console.log("1 document inserted");
    res.json(doc);
  });
 });
-// user end
+// login end
+
+//  login
+router.get('/painting',(req, res, next) => {
+    db.painting.find(function (err, docs) {
+        console.log(docs);
+        res.json(docs);
+    });
+})
+router.post('/painting',(req, res, next) => {
+    var newObj = req.body;
+    db.painting.insert(newObj, function(err, doc) {
+    if (err) throw err;
+    console.log("1 document inserted");
+    res.json(doc);
+    });
+});
+// login end
+
 module.exports = router;

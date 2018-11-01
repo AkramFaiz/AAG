@@ -18,8 +18,8 @@ export class LoginService implements OnInit {
   constructor(private _http: HttpClient) { }
 
   ngOnInit() {
-    this._http.get('/login').subscribe(res => this.result = res);
-    console.log(this.result);
+    // this._http.get('/login').subscribe(res => this.result = res);
+    // console.log(this.result);
     // return this._http.get('/login').map(result => this.result = result.json());
   }
   loginCall(creds, res) {

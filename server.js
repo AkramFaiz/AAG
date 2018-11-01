@@ -8,7 +8,7 @@ var api = require('./server/api');
 
 app.use(_bp.json());
 app.use(_bp.urlencoded({extended: false}));
-app.use(express.static(_path.join(__dirname,'dist')));
+app.use(express.static(_path.join(__dirname,'dist/AAG')));
 
 app.use('/',api);
 app.use(function(req,res,next){
@@ -21,10 +21,10 @@ app.use('/file',api);
 app.use(cors());
 
 app.get('*'),(req,res) => {
-    res.sendFile(_path.join(__dirname,'dist/index.html'));
+    res.sendFile(_path.join(__dirname,'dist/AAG/index.html'));
 }
 
-var port = process.env.PORT || '1111';
+var port = process.env.PORT || '1100';
 app.set('port',port);
 
 var server = _http.createServer(app);

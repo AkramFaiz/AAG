@@ -26,9 +26,10 @@ export class LoginComponent implements OnInit {
       this.messageService.clear();
   }
   ngOnInit() {
-    this._http.get('/src/app/login/login.json').subscribe(
+    this._http.get('/login').subscribe(
       data => {
         this.data1 = data as string [];
+        console.log('login:', this.data1);
       },
       (err: HttpErrorResponse) => {
         console.log (err.message);
@@ -42,7 +43,9 @@ export class LoginComponent implements OnInit {
       password: this.password
     };
     this.loginReport.loginCall(this.credData, this.data1);
-    this.loginReport.loginSts.subscribe( res => { this.report = res; });
+    this.loginReport.loginSts.subscribe( res => { this.report = res;
+    console.log('report: ', this.report);
+    });
     this.resp = this.report.split(',');
       if ( this.resp[0] === 'true' && this.resp[1] === 'true' ) {
           this.data = {

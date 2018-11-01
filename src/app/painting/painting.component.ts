@@ -18,10 +18,9 @@ export class PaintingComponent implements OnInit {
   rangeValue: any;
 
   constructor(private paintS: PaintServiceService, private imgS: CurImageService ) {
-    console.log('const');
   }
   ngOnInit() {
-      this.paintS.getPaintList().subscribe( (res: ImageType[]) => { this.images = res; });
+      this.paintS.getList_Paint().subscribe( (res: ImageType[]) => { this.images = res;  console.log('PaintData', this.images); });
   }
   onAfterChange(value) {
       console.log(`onAfterChange: ${value}`);

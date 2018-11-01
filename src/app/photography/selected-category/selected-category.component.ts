@@ -8,7 +8,7 @@ import { ImageType } from 'src/app/interface/image.interface';
   templateUrl: './selected-category.component.html',
   styleUrls: ['./selected-category.component.css']
 })
-export class SelectedCategoryComponent implements OnInit, AfterViewInit {
+export class SelectedCategoryComponent implements OnInit {
   selValue: any;
   resData: ImageType[];
   rangeVal: number[] = [0, 100];
@@ -20,12 +20,14 @@ export class SelectedCategoryComponent implements OnInit, AfterViewInit {
   constructor(private catSel: PhotoSelectedCatergoryService, private actRoute: ActivatedRoute) { }
 
   ngOnInit() {
-      this.actRoute.paramMap.subscribe( res => this.selValue = res);
-      this.catSel.getSelCat(this.selValue.params.Selvalue).subscribe( (res: ImageType[]) => {
+    console.log( this.resData);
+      this.resData = [];
+      this.actRoute.params.subscribe( res => { this.selValue = res.Selvalue; });
+      this.catSel.getSelCat(this.selValue).subscribe( (res: ImageType[]) => {
         this.resData = res;
       });
-  }
-  ngAfterViewInit() {
-    console.log(this.resData);
-  }
+    }
+    onAfterChange(value) {
+      console.log(`onAfterChange: ${value}`);
+    }
 }

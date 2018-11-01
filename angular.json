@@ -24,6 +24,12 @@
               "src/manifest.json"
             ],
             "styles": [
+              "./node_modules/bootstrap/dist/css/bootstrap.css",
+              "./node_modules/primeicons/primeicons.css",
+              "./node_modules/ng-zorro-antd/src/ng-zorro-antd.min.css",
+              "./node_modules/font-awesome/css/font-awesome.min.css",
+              "./node_modules/primeng/resources/primeng.min.css",
+              "./node_modules/primeng/resources/themes/darkness/theme.css",
               "src/theme.less",
               "src/styles.css"
             ],

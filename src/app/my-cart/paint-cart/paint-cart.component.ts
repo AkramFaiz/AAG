@@ -21,7 +21,7 @@ export class PaintCartComponent implements OnInit {
   proFlag = false;
   constructor(private paintS: PaintServiceService, private messageService: MessageService, private route: Router) { }
   ngOnInit() {
-    this.paintS.getPaintList().subscribe( (res: ImageType[]) => { this.resItems = res;
+    this.paintS.getList_Paint().subscribe( (res: ImageType[]) => { this.resItems = res;
       this.resItems.forEach(ele => {
         if ( ele.addedToCart === true) {
             this.cardItems.push(ele);

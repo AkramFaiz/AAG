@@ -9,6 +9,7 @@ import { map } from 'rxjs/operators';
 export class PaintServiceService implements OnInit {
   // configUrl = 'assets/json/paintData.json';
   result: ImageType[];
+  updatedResult: ImageType;
   constructor(private _http: HttpClient) { }
   ngOnInit() {
   }
@@ -18,7 +19,12 @@ export class PaintServiceService implements OnInit {
 
     return this._http.get<ImageType[]>('/painting').pipe(map( result => this.result = result));
   }
-  // update
+// update
+  saveEditItem_Paint(id, item) {
+    return this._http.put<ImageType>('/painting/' + id, item).pipe(map(res => this.updatedResult = res));
+  }
+
+
 //   addItem_Paint(item) {
 //     return this._http.post('/painting', item).pipe(map(result => this.result = result));
 //  }
@@ -27,8 +33,5 @@ export class PaintServiceService implements OnInit {
 //   }
 //   editItem_Paint(id) {
 //     return this._http.get('/painting/' + id).pipe(map(result => this.result = result));
-//   }
-//   saveEditItem_Paint(id, item) {
-//     return this._http.put('/painting/' + id, item).pipe(map(result => this.result = result));
 //   }
 }

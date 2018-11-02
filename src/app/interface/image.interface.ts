@@ -1,5 +1,5 @@
 export interface ImageType {
-    id: number;
+    _id: string;
     path: any;
     cost: number;
     width: string;

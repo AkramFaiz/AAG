@@ -2,7 +2,7 @@
     <img src="{{imageList.path}}" [style.width]="imageList.width" height="100%" alt="assets" (click)="imgClked()">
     <ul>
         <li><span id="price"></span><label for="price">{{imageList.cost|number}}</label></li>
-        <li><span [ngClass]="{'like':likeFlag,'unlike':!likeFlag}" (click)="likeFlag = !likeFlag; likeClk($event);"></span><i>{{imageList.likeCount}}</i></li>
+        <li><span [ngClass]="{'like':likeFlag,'unlike':!likeFlag}" (click)="likeClk($event);"></span><i>{{imageList.likeCount}}</i></li>
         <li><span #cart [ngClass]="{'cartAdd':cartAct ,'cartRemove':!cartAct}" (click)="cartSelected(imageList,cart);"></span></li>
     </ul>
 </div>

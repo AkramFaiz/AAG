@@ -16,6 +16,7 @@ export class CurImageService {
   }
   setCurImg( val: ImageType ) {
     console.log('curimgaserv', val);
+    this.paintS.saveEditItem_Paint(val._id, val).subscribe( res => console.log('Updated:', res));
     // this.paintS.
     // this.imgVal = val;
     this.imgVal.next(val);

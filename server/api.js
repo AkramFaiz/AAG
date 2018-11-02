@@ -32,13 +32,34 @@ db.login.insert(newObj, function(err, doc) {
 });
 // login end
 
-//  login
+//  painting
 router.get('/painting',(req, res, next) => {
     db.painting.find(function (err, docs) {
         console.log(docs);
         res.json(docs);
     });
 })
+
+router.put('/painting/:id',function(req,res){
+    var curId = req.params.id;
+    db.painting.findAndModify({query: {_id: mongojs.ObjectId(curId)},update:{$set:
+        {   path : req.body.path,
+            cost: req.body.cost,
+            width: req.body.width,
+            liked: req.body.liked,
+            likeCount: req.body.likeCount,
+            addedToCart: req.body.addedToCart,
+            title: req.body.title,
+            desc: req.body.desc,
+            dimentions: req.body.dimentions,
+        }},new: true}, function(err,doc){
+        console.log(doc);
+		res.json(doc);
+    });
+
+});
+
+// admin
 router.post('/painting',(req, res, next) => {
     var newObj = req.body;
     db.painting.insert(newObj, function(err, doc) {
@@ -47,6 +68,7 @@ router.post('/painting',(req, res, next) => {
     res.json(doc);
     });
 });
-// login end
+
+// painting end
 
 module.exports = router;

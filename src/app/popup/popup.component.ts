@@ -28,14 +28,70 @@ export class PopupComponent implements OnInit {
      private popS: PopupStateService, private imgS: CurImageService) { }
   ngOnInit() {
     this.imgS.curImg.subscribe( res => this.imageDetail = res);
-    console.log('clicked ngAfterViewChecked', this.imageDetail);
+    console.log('clicked onint:', this.imageDetail);
+    const logged = this.loginChk();
+    if ( logged === true ) {
     this.likeFlag = this.imageDetail.liked;
     this.cartAct = this.imageDetail.addedToCart;
+    } else {
+      this.likeFlag = false;
+      this.cartAct = false;
+    }
     this.isVisibleMiddle = true;
   }
-  // ngAfterViewChecked() {
 
-  // }
+  // cart select/ Like select
+  cartSelected(sCart, ele) {
+    const logged = this.loginChk();
+    // tslint:disable-next-line:triple-equals
+    if ( logged === true ) {
+       this.cartAct = !this.cartAct;
+       if ( ele.className === 'cartRemove') {
+        this.imageDetail.addedToCart = true;
+        this.updateData(this.imageDetail);
+        this.selCartList.push(sCart);
+       } else if ( ele.className === 'cartAdd') {
+        this.imageDetail.addedToCart = false;
+        this.updateData(this.imageDetail);
+        this.selCartList.pop();
+       }
+      console.log(this.selCartList);
+    } else {
+      // this.cartAct = false;
+      this.messageService.add({key: 'cart', severity: 'warn',
+      summary: 'Not yet logged in.', detail: 'Login Required.'});
+    }
+  }
+  likeClk(ee) {
+    const logged = this.loginChk();
+    // tslint:disable-next-line:no-debugger
+    debugger;
+    // tslint:disable-next-line:triple-equals
+    if ( logged === true ) {
+      console.log(ee);
+      this.likeFlag = !this.likeFlag;
+      if (ee.className === 'unlike') {
+        this.imageDetail.likeCount++;
+        this.imageDetail.liked = true;
+        this.updateData(this.imageDetail);
+        return this.imageDetail.likeCount;
+      } else {
+        this.imageDetail.likeCount--;
+        this.imageDetail.liked = false;
+        this.updateData(this.imageDetail);
+        return this.imageDetail.likeCount;
+      }
+    } else {
+      // this.cartAct = false;
+      this.messageService.add({key: 'cart', severity: 'warn',
+      summary: 'Not yet logged in.', detail: 'Login Required.'});
+    }
+  }
+  updateData(fnlImg) {
+    this.imgS.setCurImg(fnlImg);
+  }
+
+  // popup ok / cancel
   handleOkMiddle(): void {
     console.log('click ok');
     this.isVisibleMiddle = false;
@@ -46,64 +102,43 @@ export class PopupComponent implements OnInit {
     this.isVisibleMiddle = false;
     this.popS.popSetState(false);
   }
+
+  // comment
   commentSubmit(cmt) {
     console.log(cmt);
-    if (cmt.value === '') {
-      this.cmtClk = false;
-      this.messageService.add({
-        key: 'comment',
-        severity: 'warn',
-        summary: 'Comments cannot be empty.',
-        detail: 'Comments cannot be empty.'});
-      } else {
-        this.cmtClk = true;
-        this.currCmt = cmt.value;
-      }
+    const logged = this.loginChk();
+    if ( logged === true ) {
+      if (cmt.value === '') {
+        this.cmtClk = false;
+        this.messageService.add({
+          key: 'comment',
+          severity: 'warn',
+          summary: 'Comments cannot be empty.',
+          detail: 'Comments cannot be empty.'});
+        } else {
+          this.cmtClk = true;
+          this.currCmt = cmt.value;
+        }
+    } else {
+      this.messageService.add({key: 'cart', severity: 'warn',
+      summary: 'Not yet logged in.', detail: 'Login Required.'});
+    }
   }
   deleteComment() {
     console.log('delCmt');
     this.currCmt = '';
   }
-  cartSelected(sCart, ele) {
-    this.loginS.loginSts.subscribe(res => this.res = res);
-    console.log('lSts: ', this.res);
-    if (this.res !== false) {
-      this.resp = JSON.parse(this.res.split(',')[0]);
-    }
-    // tslint:disable-next-line:triple-equals
-    if ( this.resp === true ) {
-      this.cartAct = !this.cartAct;
-       if ( ele.className === 'cartRemove') {
-        this.selCartList.push(sCart);
-       } else if ( ele.className === 'cartAdd') {
-        this.selCartList.pop();
-       }
-      console.log(this.selCartList);
-    } else {
-      this.cartAct = false;
-      this.messageService.add({key: 'cart', severity: 'warn',
-      summary: 'Not yet logged in.', detail: 'Login Required.'});
-    }
-  }
   clear() {
-      this.messageService.clear();
+    this.messageService.clear();
   }
-  likeClk(ee) {
-    console.log(ee.className);
-    // backend service call to store the count
-    if (ee.className === 'unlike') {
-      this.imageDetail.likeCount++;
-      this.imageDetail.liked = true;
-      this.updateData(this.imageDetail);
-      return this.imageDetail.likeCount;
-    } else {
-      this.imageDetail.likeCount--;
-      this.imageDetail.liked = false;
-      this.updateData(this.imageDetail);
-      return this.imageDetail.likeCount;
-    }
-  }
-  updateData(fnlImg) {
-    this.imgS.setCurImg(fnlImg);
+
+  // login in check
+  loginChk() {
+    this.loginS.loginSts.subscribe(res => this.res = res);
+      console.log( 'Login sts: ', this.res);
+      if (this.res !== false) {
+        this.resp = JSON.parse(this.res.split(',')[0]);
+      } else { this.resp = false; }
+      return this.resp;
   }
 }

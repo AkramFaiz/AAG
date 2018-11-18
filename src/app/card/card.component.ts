@@ -31,25 +31,33 @@ export class CardComponent implements OnInit, DoCheck {
     private imgS: CurImageService, private paintS: PaintServiceService) {
   }
   ngOnInit() {
+    console.log('List of images', this.imageList);
     this.updatedImg = false;
   }
   ngDoCheck() {
+    console.log('card on change');
     const logged = this.loginChk();
     if ( logged === true ) {
     // Add2Cart
       if (this.imageList.addedToCart === true) {
         this.cartAct = true;
+      } else {
+        this.cartAct = false;
       }
 
     // like
     if (this.imageList.liked === true) {
          this.likeFlag = true;
+      } else {
+        this.likeFlag = false;
       }
+
     } else {
       this.likeFlag = false;
       this.cartAct = false;
     }
   }
+
   cartSelected(sCart, ele) {
     const logged = this.loginChk();
     // tslint:disable-next-line:triple-equals

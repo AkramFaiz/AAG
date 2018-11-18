@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
   animations: [
     trigger('leafLeft', [
       transition('void => *', [
-        animate('3s ease-in', keyframes([
+        animate('1.5s ease-in', keyframes([
             style({
               offset: 0,
               opacity: 0,
@@ -25,7 +25,7 @@ import { ActivatedRoute } from '@angular/router';
     ]),
     trigger('leafRight', [
       transition(':enter', [
-        animate('3s ease-in', keyframes([
+        animate('1.5s ease-in', keyframes([
             style({
               offset: 0,
               opacity: 0,

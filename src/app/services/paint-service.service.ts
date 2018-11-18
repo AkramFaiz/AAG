@@ -21,7 +21,12 @@ export class PaintServiceService implements OnInit {
   }
 // update
   saveEditItem_Paint(id, item) {
-    return this._http.put<ImageType>('/painting/' + id, item).pipe(map(res => this.updatedResult = res));
+    return this._http.put<ImageType>('/painting/' + id, item)
+    .pipe(map(res => {this.updatedResult = res; console.log('UpadtedImg in Paint service:', this.updatedResult); }));
+  }
+  getUpadtedImg() {
+    console.log('getUpadtedImg', this.updatedResult);
+    return this.updatedResult;
   }
 
 

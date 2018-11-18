@@ -33,6 +33,14 @@ db.login.insert(newObj, function(err, doc) {
 // login end
 
 //  painting
+router.get('/painting/:id',(req, res, next) => {
+    var curId = req.params.id;
+    db.painting.find(curId,function (err, docs) {
+        console.log('curId:', docs);
+        res.json(docs);
+    });
+})
+
 router.get('/painting',(req, res, next) => {
     db.painting.find(function (err, docs) {
         console.log(docs);

@@ -1,0 +1,33 @@
+.signIn-form{
+    display: flex;
+    flex-direction: column;
+}
+.signIn-form > *{
+    width: 100%;
+}
+
+img{
+    position: absolute;
+    top: -26px;
+    background: #23212f;
+    width: 60px;
+    border-radius: 45%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 7px;
+}
+input{
+    width: 100%;
+    background: rgba(0, 0, 0, 0.53);
+    border: none;
+    color: #ab843a;
+    padding: 5px 10px 9px 10px;
+}
+.ui-inputgroup-addon i{
+    margin: 2px 3px 0 0;
+    font-size: 20px;
+}
+button{
+    font-size: 14px;
+}

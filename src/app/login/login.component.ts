@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { MessageService } from 'primeng/api';
 import { LoginService } from '../services/login.service';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +19,8 @@ export class LoginComponent implements OnInit {
   credData: any;
   report: any;
   @Output() userClk: EventEmitter<string> = new EventEmitter<string>();
-  constructor(private messageService: MessageService, private loginReport: LoginService, private _http: HttpClient) {}
+  constructor(private messageService: MessageService,
+     private loginReport: LoginService, private _http: HttpClient, private route: Router) {}
   addSingle() {
       this.messageService.add({key: 'login', severity: 'warn', summary: 'Wrong Credentials', detail: 'Try Again'});
   }
@@ -75,6 +77,11 @@ export class LoginComponent implements OnInit {
   }
   userAction(val) {
     this.userClk.emit(val);
+  }
+
+  signInClk() {
+    this.route.navigate(['/signin']);
+    this.userAction('signin');
   }
 }
 

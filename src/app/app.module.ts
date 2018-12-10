@@ -24,7 +24,6 @@ import {ProgressBarModule} from 'primeng/progressbar';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeadComponent } from './head/head.component';
 import { DishComponent } from './dish/dish.component';
 import { CardComponent } from './card/card.component';
@@ -58,7 +57,6 @@ registerLocaleData(zh);
   declarations: [
     AppComponent,
     LoginComponent,
-    DashboardComponent,
     HeadComponent,
     DishComponent,
     CardComponent,

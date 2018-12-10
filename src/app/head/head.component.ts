@@ -2,7 +2,6 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { LoginService } from '../services/login.service';
 import { Router } from '@angular/router';
 import { LoginComponent } from '../login/login.component';
-declare var $: any;
 
 @Component({
   selector: 'app-head',
@@ -11,8 +10,9 @@ declare var $: any;
 })
 export class HeadComponent implements OnInit {
   @ViewChild(LoginComponent) lc: LoginComponent;
-  visibleSidebar1;
-  visibleSidebar2;
+  visibleSidebar1; // login
+  visibleSidebar2; // others - Tags
+  // visibleSidebar3 = false; // signIn
   uName: string;
   logged: boolean;
   admin_role: boolean;
@@ -38,20 +38,20 @@ export class HeadComponent implements OnInit {
   }
 
   userClkRes(e) {
-    this.visibleSidebar1 = false;
-    if (e.type === 'login') {
-      this.uName = e.username;
-      this.logged = true;
-      if ( e.admin === true ) {
-        this.admin_role = true;
-      } else { this.admin_role = false; }
-    } else {
-      this.logged = false;
-    }
-    this.lc.username = '';
-    this.lc.password = '';
+    console.log(e);
+      this.visibleSidebar1 = false;
+      if (e.type === 'login') {
+        this.uName = e.username;
+        this.logged = true;
+        if ( e.admin === true ) {
+          this.admin_role = true;
+        } else { this.admin_role = false; }
+      } else {
+        this.logged = false;
+      }
+      this.lc.username = '';
+      this.lc.password = '';
   }
-
   logoutClk() {
     this.loginS.setLoginSts(false);
     this.loginS.loginSts.subscribe(res => this.koi = res);
